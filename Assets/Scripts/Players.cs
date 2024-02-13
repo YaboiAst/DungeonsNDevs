@@ -6,31 +6,17 @@ using UnityEngine.UI;
 
 public class Players : GenericEntity
 {
-    [Header("Visual")]
-    [SerializeField] private Image iconUI;
-    [SerializeField] private TextMeshProUGUI nameUI;
-    
-    [SerializeField] private Image healthUI;
-    [SerializeField] private TextMeshProUGUI healthIndicatorUI;
-
-    // ============================================================= //
-
     private GenericEntity boss;
+    
+    private void Start() {
+        currentHealth = cInfo.maxHealth;
 
-    private void Start() {  
         gm = GameManager.instance;
         boss = gm.GetBoss();
 
         GetComponent<SpriteRenderer>().sprite = cInfo.art;
         //GetComponent<Animator>().runtimeAnimatorController = cInfo.animator;
 
-        currentHealth = cInfo.maxHealth;
-
-        iconUI.sprite = cInfo.classIcon;
-        nameUI.text = cInfo.characterName;
-        
-        healthIndicatorUI.text = currentHealth.ToString() + "/" + cInfo.maxHealth.ToString();
-        healthUI.fillAmount = currentHealth/cInfo.maxHealth;
     }
 
     public override void BasicAttack(int nAttacks = 1){

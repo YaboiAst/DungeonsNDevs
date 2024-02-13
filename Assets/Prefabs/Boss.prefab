@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1421420168, guid: 4a28df3a1c4f19d4eb98175e039ce341, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -196,10 +196,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cInfo: {fileID: 11400000, guid: 5cab47d48761fb7ee9a39dd168135759, type: 2}
-  iconUI: {fileID: 8089001189355548539}
-  nameUI: {fileID: 2914761756723680482}
-  healthUI: {fileID: 4282680243679000405}
-  healthIndicatorUI: {fileID: 5111053227951365605}
+  onHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2472809629892171191
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,6 +633,7 @@ GameObject:
   - component: {fileID: 8275402297552087360}
   - component: {fileID: 2862781852391222416}
   - component: {fileID: 7406469510426686583}
+  - component: {fileID: 5239384096711450386}
   m_Layer: 0
   m_Name: BossInfo
   m_TagString: Untagged
@@ -724,3 +724,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5239384096711450386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8559064570886357963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a770e8a1303a4e954b2288af838c837e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconUI: {fileID: 8089001189355548539}
+  nameUI: {fileID: 2914761756723680482}
+  healthUI: {fileID: 4282680243679000405}
+  healthIndicatorUI: {fileID: 5111053227951365605}

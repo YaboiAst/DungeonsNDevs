@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TurnAnim : MonoBehaviour
 {
     GameManager gm;
     private TextMeshProUGUI turnText;
-    private Sequence seq;
+    private Sequence seqTurn;
 
     public float offset;
     public float animationDuration = 1f;
@@ -23,21 +24,23 @@ public class TurnAnim : MonoBehaviour
     }
 
     private void ChangeTurnAnim(){
-        seq = DOTween.Sequence();
-        seq.AppendInterval(1f);
+        seqTurn = DOTween.Sequence();
 
-        seq.Append(transform.DOMoveY(transform.position.y - offset, animationDuration)
+        seqTurn.AppendInterval(.5f);
+
+        seqTurn.Append(transform.DOMoveY(transform.position.y - offset, animationDuration)
         .SetEase(Ease.OutQuad)
         .OnComplete(() => SetActiveName()));
 
-        seq.AppendInterval(idleDuration);
+        seqTurn.AppendInterval(idleDuration);
 
-        seq.Append(transform.DOMoveY(transform.position.y, animationDuration)
+        seqTurn.Append(transform.DOMoveY(transform.position.y, animationDuration)
         .SetEase(Ease.InQuad));
     }
 
     private void SetActiveName(){
         GenericEntity active = gm.GetActiveTurn();
+        Debug.Log(active.GetComponent<GenericEntity>().GetEntityName());
         turnText.text = active.GetComponent<GenericEntity>().GetEntityName();
         turnText.text += "'s Turn";
     }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public abstract class GenericEntity : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public abstract class GenericEntity : MonoBehaviour
     internal GameManager gm;
 
     internal float currentHealth;
+
+    [HideInInspector] public UnityEvent onHealthChange; 
 
     // GENERIC FUNCTIONS ------------------------------------------
     public abstract bool isPlayer();
@@ -21,6 +24,8 @@ public abstract class GenericEntity : MonoBehaviour
 
         if(currentHealth < 0) currentHealth = 0;
         if(currentHealth > cInfo.maxHealth) currentHealth = cInfo.maxHealth;
+
+        onHealthChange?.Invoke();
     }
     
     public string GetEntityName(){

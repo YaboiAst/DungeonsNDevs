@@ -247,6 +247,8 @@ MonoBehaviour:
   offset: 300
   animationDuration: 1
   idleDuration: 0.1
+  basicAttackButton: {fileID: 0}
+  specialAttackButton: {fileID: 0}
 --- !u!1 &172917705
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,7 +285,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 770, y: -252}
+  m_AnchoredPosition: {x: 770, y: -260}
   m_SizeDelta: {x: 300, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &172917707
@@ -1212,6 +1214,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f700241c346dfd27b51285060f90b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actionsTransform: {fileID: 172917706}
+  basicAttackButton: {fileID: 1395325384}
+  specialAttackButton: {fileID: 1945698055}
+  offset: 600
+  animationDuration: 1
+  idleDuration: 0.5
 --- !u!1 &1256868157
 GameObject:
   m_ObjectHideFlags: 0
