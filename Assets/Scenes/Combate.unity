@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 164201085}
   - component: {fileID: 164201087}
   - component: {fileID: 164201086}
+  - component: {fileID: 164201088}
   m_Layer: 5
   m_Name: TurnManager backdrop
   m_TagString: Untagged
@@ -190,7 +191,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -720, y: -413}
+  m_AnchoredPosition: {x: -720, y: -410}
   m_SizeDelta: {x: 400, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &164201086
@@ -231,6 +232,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 164201084}
   m_CullTransparentMesh: 1
+--- !u!114 &164201088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164201084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce52eb8c13c26ed50adc67051914b9ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 300
+  animationDuration: 1
+  idleDuration: 0.5
 --- !u!1 &172917705
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,6 +779,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &588629640 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4655116433445015628, guid: 7a01f897f5ca64f3297d062d089351c8, type: 3}
+  m_PrefabInstance: {fileID: 368387959}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &615638644
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,6 +852,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &732794692 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4655116433445015628, guid: 7a01f897f5ca64f3297d062d089351c8, type: 3}
+  m_PrefabInstance: {fileID: 6495814597171314756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &741066682 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4655116433445015628, guid: 7a01f897f5ca64f3297d062d089351c8, type: 3}
+  m_PrefabInstance: {fileID: 1217930646}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &877410526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1499,6 +1530,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1615374658}
+  - component: {fileID: 1615374659}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1521,6 +1553,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1615374659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615374657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce4e9094b76928d378c3ea098a33a972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxPartySize: 4
+  roundOrder:
+  - {fileID: 1762429065}
+  - {fileID: 741066682}
+  - {fileID: 732794692}
+  - {fileID: 588629640}
+  - {fileID: 1638037781}
+  active: {fileID: 0}
+  onRoomEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onPassTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  onBossKill:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!4 &1638037781 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1023283256638183075, guid: 0563e8c8e5993d9ae8100bcd3a10832d, type: 3}
+  m_PrefabInstance: {fileID: 6533400468387883612}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1639111112
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,6 +1622,11 @@ Transform:
   - {fileID: 1138192453}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1762429065 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4655116433445015628, guid: 7a01f897f5ca64f3297d062d089351c8, type: 3}
+  m_PrefabInstance: {fileID: 265663048}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1921874194
 GameObject:
   m_ObjectHideFlags: 0

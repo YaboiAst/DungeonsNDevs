@@ -52,4 +52,8 @@ public class Players : MonoBehaviour
         if(currentHealth < 0) currentHealth = 0;
         if(currentHealth > cInfo.maxHealth) currentHealth = cInfo.maxHealth;
     }
+
+    public string GetPlayerName(){
+        return cInfo.characterName;
+    }
 }
