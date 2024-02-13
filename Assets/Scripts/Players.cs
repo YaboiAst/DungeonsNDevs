@@ -4,56 +4,48 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Players : MonoBehaviour
+public class Players : GenericEntity
 {
-    [Header("Character Info")]
-    [SerializeField] private Character cInfo;
-
-    private float currentHealth;
-
-    [Header("Visual")]
-    [SerializeField] private Image iconUI;
-    [SerializeField] private TextMeshProUGUI nameUI;
+    private GenericEntity boss;
     
-    [SerializeField] private Image healthUI;
-    [SerializeField] private TextMeshProUGUI healthIndicatorUI;
-
     private void Start() {
+        currentHealth = cInfo.maxHealth;
+
+        gm = GameManager.instance;
+        boss = gm.GetBoss();
+
         GetComponent<SpriteRenderer>().sprite = cInfo.art;
         //GetComponent<Animator>().runtimeAnimatorController = cInfo.animator;
 
-        currentHealth = cInfo.maxHealth;
-
-        iconUI.sprite = cInfo.classIcon;
-        nameUI.text = cInfo.characterName;
-        
-        healthIndicatorUI.text = currentHealth.ToString() + "/" + cInfo.maxHealth.ToString();
-        healthUI.fillAmount = currentHealth/cInfo.maxHealth;
     }
 
-    private void BasicAttack(int nAttacks = 1){
-        Debug.Log("Dealing " + cInfo.basicAttack + " to the monster " + nAttacks + " times");
+    public override void BasicAttack(int nAttacks = 1){
+        boss.ChangeHealth(-cInfo.basicAttack);
 
         if(nAttacks == 1)
             return;
         
         for(int i = 1; i < nAttacks; i++){
-            Debug.Log("Dealing " + cInfo.basicAttack + " to the monster...");
+            boss.ChangeHealth(-cInfo.basicAttack);
         }
     }
 
-    private void SpecialAttack(){
+    public override void SpecialAttack(){
+        if(cInfo.specialAttack == ""){
+            Debug.Log("Ataque especial");
+            return;
+        }
+
+        cInfo.isSpecialUp = false;
+        cInfo.SetCooldownCounter();
         Invoke(cInfo.specialAttack, 0f);
     }
 
-    private void ChangeHealth(float amount){
-        currentHealth += amount;
-
-        if(currentHealth < 0) currentHealth = 0;
-        if(currentHealth > cInfo.maxHealth) currentHealth = cInfo.maxHealth;
+    public void ManageCooldown(){
+        if(!cInfo.isSpecialUp){
+            cInfo.UpdateCooldown();
+        }
     }
 
-    public string GetPlayerName(){
-        return cInfo.characterName;
-    }
+    public override bool isPlayer(){ return true; }
 }

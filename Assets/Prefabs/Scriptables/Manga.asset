@@ -10,14 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4e9ba10560aed922991c48e6e17aa47, type: 3}
-  m_Name: Ast
+  m_Name: Manga
   m_EditorClassIdentifier: 
-  characterName: Ast
-  maxHealth: 30
+  characterName: Manga
+  maxHealth: 50
   basicAttack: 5
   specialAttack: 
   specialParams: []
-  art: {fileID: 21300000, guid: b5dc8d596b78f314b8b0ac3a00d7fcf0, type: 3}
+  specialCooldown: 2
+  isSpecialUp: 1
+  art: {fileID: 21300000, guid: 1c02df540ac2b61419de6d22c2c2388a, type: 3}
   classIcon: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   animator: {fileID: 0}
   onTakeDamage:
