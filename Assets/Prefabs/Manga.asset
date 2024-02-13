@@ -17,7 +17,9 @@ MonoBehaviour:
   basicAttack: 5
   specialAttack: 
   specialParams: []
-  art: {fileID: 21300000, guid: 2f182e460724a3696ae8a7593d660875, type: 3}
+  specialCooldown: 2
+  isSpecialUp: 1
+  art: {fileID: 21300000, guid: 1c02df540ac2b61419de6d22c2c2388a, type: 3}
   classIcon: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   animator: {fileID: 0}
   onTakeDamage:

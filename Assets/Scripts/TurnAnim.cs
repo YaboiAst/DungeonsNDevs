@@ -19,24 +19,26 @@ public class TurnAnim : MonoBehaviour
         gm = GameManager.instance;
         gm.onPassTurn.AddListener(ChangeTurnAnim);
 
-        seq = DOTween.Sequence();
-        seq.Append(transform.DOMoveY(transform.position.y - offset, animationDuration)
-        .SetEase(Ease.OutQuad)
-        .OnComplete(() => SetActiveName()));
-        seq.AppendInterval(idleDuration);
-        seq.Append(transform.DOMoveY(transform.position.y, animationDuration)
-        .SetEase(Ease.InQuad));
-
         turnText = GetComponentInChildren<TextMeshProUGUI>();
     }
 
     private void ChangeTurnAnim(){
-        seq.Play();
+        seq = DOTween.Sequence();
+        seq.AppendInterval(1f);
+
+        seq.Append(transform.DOMoveY(transform.position.y - offset, animationDuration)
+        .SetEase(Ease.OutQuad)
+        .OnComplete(() => SetActiveName()));
+
+        seq.AppendInterval(idleDuration);
+
+        seq.Append(transform.DOMoveY(transform.position.y, animationDuration)
+        .SetEase(Ease.InQuad));
     }
 
     private void SetActiveName(){
-        Transform active = gm.GetActiveTurn();
-        turnText.text = active.GetComponent<Players>().GetPlayerName();
+        GenericEntity active = gm.GetActiveTurn();
+        turnText.text = active.GetComponent<GenericEntity>().GetEntityName();
         turnText.text += "'s Turn";
     }
 }

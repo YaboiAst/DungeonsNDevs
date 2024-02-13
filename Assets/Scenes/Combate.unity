@@ -246,7 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: 300
   animationDuration: 1
-  idleDuration: 0.5
+  idleDuration: 0.1
 --- !u!1 &172917705
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,7 +460,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: xxx's Turn
+  m_text: Starting Combat..
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -779,11 +779,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &588629640 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4655116433445015628, guid: 7a01f897f5ca64f3297d062d089351c8, type: 3}
+--- !u!114 &588629641 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1767866751860155708, guid: 7a01f897f5ca64f3297d062d089351c8, type: 3}
   m_PrefabInstance: {fileID: 368387959}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b371d10bb948b54999c02f44f6390878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &615638644
 GameObject:
   m_ObjectHideFlags: 0
@@ -852,16 +858,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &732794692 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4655116433445015628, guid: 7a01f897f5ca64f3297d062d089351c8, type: 3}
-  m_PrefabInstance: {fileID: 6495814597171314756}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &741066682 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4655116433445015628, guid: 7a01f897f5ca64f3297d062d089351c8, type: 3}
-  m_PrefabInstance: {fileID: 1217930646}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &877410526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1112,6 +1108,7 @@ GameObject:
   - component: {fileID: 1239049106}
   - component: {fileID: 1239049105}
   - component: {fileID: 1239049104}
+  - component: {fileID: 1239049108}
   m_Layer: 5
   m_Name: ActionHUD
   m_TagString: Untagged
@@ -1203,6 +1200,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1239049108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239049103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f700241c346dfd27b51285060f90b33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1256868157
 GameObject:
   m_ObjectHideFlags: 0
@@ -1368,6 +1377,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333123902}
   m_CullTransparentMesh: 1
+--- !u!114 &1373762460 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1767866751860155708, guid: 7a01f897f5ca64f3297d062d089351c8, type: 3}
+  m_PrefabInstance: {fileID: 1217930646}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b371d10bb948b54999c02f44f6390878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1388161784 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1767866751860155708, guid: 7a01f897f5ca64f3297d062d089351c8, type: 3}
+  m_PrefabInstance: {fileID: 6495814597171314756}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b371d10bb948b54999c02f44f6390878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1395325382
 GameObject:
   m_ObjectHideFlags: 0
@@ -1432,7 +1463,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.40784314, g: 0.40784314, b: 0.40784314, a: 0.78431374}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1450,7 +1481,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1395325385}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1239049108}
+        m_TargetAssemblyTypeName: ActionsManager, Assembly-CSharp
+        m_MethodName: BasicAttackButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1239049108}
+        m_TargetAssemblyTypeName: ActionsManager, Assembly-CSharp
+        m_MethodName: CallNextTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1395325385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1566,12 +1621,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxPartySize: 4
-  roundOrder:
-  - {fileID: 1762429065}
-  - {fileID: 741066682}
-  - {fileID: 732794692}
-  - {fileID: 588629640}
-  - {fileID: 1638037781}
+  fullParty:
+  - {fileID: 1388161784}
+  - {fileID: 588629641}
+  - {fileID: 1373762460}
+  - {fileID: 1762429066}
+  boss: {fileID: 1638037782}
+  roundOrder: []
   active: {fileID: 0}
   onRoomEnter:
     m_PersistentCalls:
@@ -1582,11 +1638,17 @@ MonoBehaviour:
   onBossKill:
     m_PersistentCalls:
       m_Calls: []
---- !u!4 &1638037781 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1023283256638183075, guid: 0563e8c8e5993d9ae8100bcd3a10832d, type: 3}
+--- !u!114 &1638037782 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9097608068230658609, guid: 0563e8c8e5993d9ae8100bcd3a10832d, type: 3}
   m_PrefabInstance: {fileID: 6533400468387883612}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b371d10bb948b54999c02f44f6390878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1639111112
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,11 +1684,17 @@ Transform:
   - {fileID: 1138192453}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1762429065 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4655116433445015628, guid: 7a01f897f5ca64f3297d062d089351c8, type: 3}
+--- !u!114 &1762429066 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1767866751860155708, guid: 7a01f897f5ca64f3297d062d089351c8, type: 3}
   m_PrefabInstance: {fileID: 265663048}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b371d10bb948b54999c02f44f6390878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1921874194
 GameObject:
   m_ObjectHideFlags: 0
@@ -1789,11 +1857,35 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1945698056}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1239049108}
+        m_TargetAssemblyTypeName: ActionsManager, Assembly-CSharp
+        m_MethodName: SpecialAttackButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1239049108}
+        m_TargetAssemblyTypeName: ActionsManager, Assembly-CSharp
+        m_MethodName: CallNextTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1945698056
 MonoBehaviour:
   m_ObjectHideFlags: 0
