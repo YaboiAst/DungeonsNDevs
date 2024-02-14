@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 
 public class UIManager : MonoBehaviour
 {
@@ -26,6 +27,6 @@ public class UIManager : MonoBehaviour
 
     private void UpdateUI(){
         healthIndicatorUI.text = entity.currentHealth.ToString() + "/" + entity.cInfo.maxHealth.ToString();
-        healthUI.fillAmount = entity.currentHealth / entity.cInfo.maxHealth;
+        healthUI.DOFillAmount(entity.currentHealth / entity.cInfo.maxHealth, 0.3f);
     }
 }

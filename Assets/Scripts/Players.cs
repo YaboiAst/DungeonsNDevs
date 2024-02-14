@@ -24,14 +24,12 @@ public class Players : GenericEntity
 
     public override bool isPlayer(){ return true; }
 
-    public override void BasicAttack(int nAttacks = 1){
+    public override void BasicAttack(){
         boss.ChangeHealth(-cInfo.basicAttack);
 
-        if(nAttacks == 1)
-            return;
-        
-        for(int i = 1; i < nAttacks; i++){
-            boss.ChangeHealth(-cInfo.basicAttack);
+        if(qAttacks > 1){
+            qAttacks--;
+            Invoke("BasicAttack", 0.5f);
         }
     }
 
@@ -56,15 +54,20 @@ public class Players : GenericEntity
         hasShield += cInfo.specialParams[0];
     }
 
+    [HideInInspector] private int qAttacks;
+    // MultiAttacks(int qAttacks)
     private void MultiAttacks(){
-        BasicAttack((int) cInfo.specialParams[0]);
+        qAttacks = (int) cInfo.specialParams[0];
+        BasicAttack();
     }
 
+    // Stun(float stunDamage)
     private void Stun(){
         boss.ChangeHealth(-cInfo.specialParams[0]);
         boss.isStuned = true;
     }
 
+    // HeallAll(float healAmount)
     private void HealAll(){
         List<Players> party = gm.GetParty();
         foreach(Players p in party){

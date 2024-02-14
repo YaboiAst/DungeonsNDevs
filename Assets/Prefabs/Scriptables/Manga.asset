@@ -15,10 +15,15 @@ MonoBehaviour:
   characterName: Manga
   maxHealth: 50
   basicAttack: 5
-  specialAttack: 
-  specialParams: []
+  specialAttack: SetShield
+  specialParams:
+  - 1
   specialCooldown: 2
-  isSpecialUp: 1
+  basicAttackName: Draw Attacks
+  basicAttackDescription: Attacks with her pencil-shaped sword
+  specialAttackName: Erase Attacks
+  specialAttackDescription: Raises her eraser shield, blocking the next incoming
+    attack
   art: {fileID: 21300000, guid: 1c02df540ac2b61419de6d22c2c2388a, type: 3}
   classIcon: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   animator: {fileID: 0}

@@ -15,10 +15,10 @@ MonoBehaviour:
   characterName: Naga
   maxHealth: 40
   basicAttack: 5
-  specialAttack: 
-  specialParams: []
+  specialAttack: HealAll
+  specialParams:
+  - 5
   specialCooldown: 2
-  isSpecialUp: 1
   art: {fileID: 21300000, guid: c04e9ececde03f345a3e4809c0aecae9, type: 3}
   classIcon: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   animator: {fileID: 0}

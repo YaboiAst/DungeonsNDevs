@@ -15,10 +15,10 @@ MonoBehaviour:
   characterName: Mary
   maxHealth: 20
   basicAttack: 8
-  specialAttack: 
-  specialParams: []
+  specialAttack: MultiAttacks
+  specialParams:
+  - 3
   specialCooldown: 2
-  isSpecialUp: 1
   art: {fileID: 21300000, guid: daa4b0a768c791144959cb28b9ea3413, type: 3}
   classIcon: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   animator: {fileID: 0}

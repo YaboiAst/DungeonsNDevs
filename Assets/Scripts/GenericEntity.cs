@@ -18,8 +18,10 @@ public abstract class GenericEntity : MonoBehaviour
     // GENERIC FUNCTIONS ------------------------------------------
     public abstract bool isPlayer();
 
-    public abstract void BasicAttack(int nAttacks = 1);
+    public abstract void BasicAttack();
     public abstract void SpecialAttack();
+
+    public Character GetCharacter(){ return cInfo; }
 
     public void ChangeHealth(float amount){
         if(hasShield > 0){

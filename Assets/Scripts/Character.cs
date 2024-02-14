@@ -20,6 +20,14 @@ public class Character : ScriptableObject
     public string specialAttack;
     public float[] specialParams;
     public int specialCooldown;
+
+    [Space(10)]
+
+    public string basicAttackName;
+    public string basicAttackDescription;
+    [Space(5)]
+    public string specialAttackName;
+    public string specialAttackDescription;
  
     [Space(10)]
 
