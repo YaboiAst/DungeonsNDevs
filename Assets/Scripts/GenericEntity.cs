@@ -10,6 +10,8 @@ public abstract class GenericEntity : MonoBehaviour
     internal GameManager gm;
 
     internal float currentHealth;
+    internal float hasShield = 0;
+    internal bool isStuned = false;
 
     [HideInInspector] public UnityEvent onHealthChange; 
 
@@ -20,6 +22,12 @@ public abstract class GenericEntity : MonoBehaviour
     public abstract void SpecialAttack();
 
     public void ChangeHealth(float amount){
+        if(hasShield > 0){
+            hasShield -= 1f;
+            // Invoke em alguma animação?
+            return;
+        }
+
         currentHealth += amount;
 
         if(currentHealth < 0) currentHealth = 0;

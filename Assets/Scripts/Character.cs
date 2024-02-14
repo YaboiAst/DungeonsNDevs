@@ -20,8 +20,6 @@ public class Character : ScriptableObject
     public string specialAttack;
     public float[] specialParams;
     public int specialCooldown;
-    private int specialCooldownCounter;
-    public bool isSpecialUp = true;
  
     [Space(10)]
 
@@ -32,15 +30,4 @@ public class Character : ScriptableObject
     [HideInInspector] public UnityEvent onTakeDamage = new UnityEvent();
     [HideInInspector] public UnityEvent onDealDamage = new UnityEvent();
     [HideInInspector] public UnityEvent onSkillUse = new UnityEvent();
-
-    public void SetCooldownCounter(){
-        specialCooldownCounter = specialCooldown;
-    }
-
-    public void UpdateCooldown(){
-        specialCooldownCounter--;
-        if(specialCooldownCounter == 0){
-            isSpecialUp = true;
-        }
-    }
 }

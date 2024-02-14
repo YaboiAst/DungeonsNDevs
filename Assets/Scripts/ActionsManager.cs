@@ -43,14 +43,21 @@ public class ActionsManager : MonoBehaviour
         .SetEase(Ease.OutQuad));
 
         seqAction.AppendInterval(idleDuration);
-
-        seqAction.Append(actionsTransform.DOMoveY(actionsTransform.position.y, animationDuration)
-        .SetEase(Ease.InQuad)
-        .OnComplete(() => SetButtons(true)));
+        
+        if(gm.active.isPlayer()){
+            seqAction.Append(actionsTransform.DOMoveY(actionsTransform.position.y, animationDuration)
+            .SetEase(Ease.InQuad)
+            .OnComplete(() => SetButtons(true)));
+        }
     }
 
     private void SetButtons(bool mode){
         basicAttackButton.interactable = mode;
-        specialAttackButton.interactable = mode;
+        if(gm.active.GetComponent<Players>().specialCooldownCounter > 0){
+            specialAttackButton.interactable = false;
+        }
+        else{
+            specialAttackButton.interactable = mode;
+        }
     }
 }

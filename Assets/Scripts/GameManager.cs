@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     public GenericEntity GetActiveTurn(){ return active; }
 
     public GenericEntity GetBoss(){ return boss; }
+    public List<Players> GetParty() { return party; }
 
     private void Awake() {
         if(instance == null){
@@ -49,8 +50,6 @@ public class GameManager : MonoBehaviour
         AddToParty(fullParty[3]);
         StartCombat();
 
-        onPassTurn.AddListener(ManageCooldowns);
-
         turn = -1;
         Next();
     }
@@ -71,14 +70,15 @@ public class GameManager : MonoBehaviour
             turn = 0; 
 
         active = roundOrder[turn];
+        if(active.isPlayer()){
+            active.GetComponent<Players>().ManageCooldown();
+        }
+        if(active.isStuned){
+            active.isStuned = false;
+            Next();
+        }
 
         onPassTurn?.Invoke();
-    }
-
-    private void ManageCooldowns(){
-        foreach(Players p in party){
-            p.ManageCooldown();
-        }
     }
 
     private void AddToParty(Players player){

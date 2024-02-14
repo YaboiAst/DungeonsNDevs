@@ -40,7 +40,6 @@ public class TurnAnim : MonoBehaviour
 
     private void SetActiveName(){
         GenericEntity active = gm.GetActiveTurn();
-        Debug.Log(active.GetComponent<GenericEntity>().GetEntityName());
         turnText.text = active.GetComponent<GenericEntity>().GetEntityName();
         turnText.text += "'s Turn";
     }

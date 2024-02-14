@@ -7,17 +7,22 @@ using UnityEngine.UI;
 public class Players : GenericEntity
 {
     private GenericEntity boss;
+
+    public int specialCooldownCounter;
     
     private void Start() {
         currentHealth = cInfo.maxHealth;
 
         gm = GameManager.instance;
+
         boss = gm.GetBoss();
 
         GetComponent<SpriteRenderer>().sprite = cInfo.art;
         //GetComponent<Animator>().runtimeAnimatorController = cInfo.animator;
 
     }
+
+    public override bool isPlayer(){ return true; }
 
     public override void BasicAttack(int nAttacks = 1){
         boss.ChangeHealth(-cInfo.basicAttack);
@@ -30,22 +35,40 @@ public class Players : GenericEntity
         }
     }
 
+    public void ManageCooldown(){
+        if(specialCooldownCounter > 0){
+            specialCooldownCounter--;
+        }
+    }
+
     public override void SpecialAttack(){
         if(cInfo.specialAttack == ""){
             Debug.Log("Ataque especial");
             return;
         }
 
-        cInfo.isSpecialUp = false;
-        cInfo.SetCooldownCounter();
-        Invoke(cInfo.specialAttack, 0f);
+        specialCooldownCounter = cInfo.specialCooldown;
+        Invoke(cInfo.specialAttack, 0.01f);
     }
 
-    public void ManageCooldown(){
-        if(!cInfo.isSpecialUp){
-            cInfo.UpdateCooldown();
+    // SetShield(int shieldAmount)
+    private void SetShield(){
+        hasShield += cInfo.specialParams[0];
+    }
+
+    private void MultiAttacks(){
+        BasicAttack((int) cInfo.specialParams[0]);
+    }
+
+    private void Stun(){
+        boss.ChangeHealth(-cInfo.specialParams[0]);
+        boss.isStuned = true;
+    }
+
+    private void HealAll(){
+        List<Players> party = gm.GetParty();
+        foreach(Players p in party){
+            p.ChangeHealth(cInfo.specialParams[0]);
         }
     }
-
-    public override bool isPlayer(){ return true; }
 }
