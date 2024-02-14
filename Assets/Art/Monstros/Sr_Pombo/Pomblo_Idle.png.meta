@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 691478e3bd75b8f48a3fb272d1ca6bd7
+guid: 3458999c7e760d54a84ff3085b088ac3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -121,7 +121,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Pomblo_Idle_0
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 56
+        width: 320
+        height: 361
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 377f2c0fc9058da45a5168e4c6ebad89
+      internalID: 894516238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pomblo_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 56
+        width: 320
+        height: 361
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c49517e3b37a4947b9e6ad88f6ed7e7
+      internalID: 511401624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pomblo_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 56
+        width: 320
+        height: 361
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b3e29fd290e72343abe135b170ffbfb
+      internalID: 2072792948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pomblo_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 56
+        width: 320
+        height: 361
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a4b67e0ef5532344a8db822d334debb
+      internalID: 1077053555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pomblo_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 2144
+        y: 56
+        width: 320
+        height: 361
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35cf62f2550c5774b846263d2814dc6d
+      internalID: -1706378689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +237,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Pomblo_Idle_0: 894516238
+      Pomblo_Idle_1: 511401624
+      Pomblo_Idle_2: 2072792948
+      Pomblo_Idle_3: 1077053555
+      Pomblo_Idle_4: -1706378689
+      Pomblo_Idle_5: -824194375
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
