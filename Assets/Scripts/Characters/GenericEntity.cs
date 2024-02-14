@@ -13,7 +13,12 @@ public abstract class GenericEntity : MonoBehaviour
     internal float hasShield = 0;
     internal bool isStuned = false;
 
-    [HideInInspector] public UnityEvent onHealthChange; 
+    [HideInInspector] public UnityEvent onHealthChange;
+    [HideInInspector] public UnityEvent onTakeDamage;
+    [HideInInspector] public UnityEvent onHealDamage;
+    [HideInInspector] public UnityEvent onShield;
+    [HideInInspector] public UnityEvent onStun;
+
 
     // GENERIC FUNCTIONS ------------------------------------------
     public abstract bool isPlayer();
@@ -34,6 +39,9 @@ public abstract class GenericEntity : MonoBehaviour
 
         if(currentHealth < 0) currentHealth = 0;
         if(currentHealth > cInfo.maxHealth) currentHealth = cInfo.maxHealth;
+
+        if(amount < 0) onTakeDamage?.Invoke();
+        else if(amount > 0) onHealDamage?.Invoke();
 
         onHealthChange?.Invoke();
     }

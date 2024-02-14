@@ -65,6 +65,8 @@ public class Players : GenericEntity
     private void Stun(){
         boss.ChangeHealth(-cInfo.specialParams[0]);
         boss.isStuned = true;
+
+        onStun?.Invoke();
     }
 
     // HeallAll(float healAmount)
