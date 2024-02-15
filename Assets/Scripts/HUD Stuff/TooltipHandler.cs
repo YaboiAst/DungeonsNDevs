@@ -30,7 +30,12 @@ public class TooltipHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     }
 
     private void SetMoveType(){
-        Character character = gm.active.GetCharacter();
+        Player character;
+        if(gm.active.isPlayer()){
+            character = gm.active.GetPlayer();
+        }
+        else return;
+        
         switch(type){
             case TooltipType.BASIC:
                 moveName = character.basicAttackName;
@@ -52,24 +57,20 @@ public class TooltipHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         moveDescription;
     }
 
-    void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
-    {
+    void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData){
         if(!thisButton.interactable)
             return;
-
 
         tooltipCanva.transform.localScale = Vector3.one * 0.01f;
         tooltipCanva.SetActive(true);
         tooltipCanva.transform.DOScale(1f, 0.2f);
     }
 
-    public void OnPointerExit(PointerEventData eventData)
-    {
+    public void OnPointerExit(PointerEventData eventData){
         CloseTooltip();
     }
 
-    public void OnPointerClick(PointerEventData eventData)
-    {
+    public void OnPointerClick(PointerEventData eventData){
         CloseTooltip();
     }
 

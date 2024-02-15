@@ -6,26 +6,25 @@ using UnityEngine.UI;
 
 public class Players : GenericEntity
 {
-    private GenericEntity boss;
+    [SerializeField] private Player playerInfo;
+    private Bosses boss;
 
-    public int specialCooldownCounter;
+    [HideInInspector] public int specialCooldownCounter;
     
-    private void Start() {
-        currentHealth = cInfo.maxHealth;
-
-        gm = GameManager.instance;
-
+    internal override void Start() {
+        base.Start();
         boss = gm.GetBoss();
-
-        GetComponent<SpriteRenderer>().sprite = cInfo.art;
-        //GetComponent<Animator>().runtimeAnimatorController = cInfo.animator;
-
     }
 
     public override bool isPlayer(){ return true; }
+    public override Character GetCharacter(){ return playerInfo; }
+    public override Player GetPlayer(){ return playerInfo; }
+    public override Boss GetBoss(){ return null; }
+
+    public int GetThreatLevel(){ return playerInfo.threatLevel; }
 
     public override void BasicAttack(){
-        boss.ChangeHealth(-cInfo.basicAttack);
+        boss.ChangeHealth(-playerInfo.basicAttack);
 
         if(qAttacks > 1){
             qAttacks--;
@@ -39,31 +38,31 @@ public class Players : GenericEntity
         }
     }
 
-    public override void SpecialAttack(){
-        if(cInfo.specialAttack == ""){
+    public void SpecialAttack(){
+        if(playerInfo.specialAttack == ""){
             Debug.Log("Ataque especial");
             return;
         }
 
-        specialCooldownCounter = cInfo.specialCooldown;
-        Invoke(cInfo.specialAttack, 0.01f);
+        specialCooldownCounter = playerInfo.specialCooldown;
+        Invoke(playerInfo.specialAttack, 0.01f);
     }
 
     // SetShield(int shieldAmount)
     private void SetShield(){
-        hasShield += cInfo.specialParams[0];
+        hasShield += playerInfo.specialParams[0];
     }
 
     [HideInInspector] private int qAttacks;
     // MultiAttacks(int qAttacks)
     private void MultiAttacks(){
-        qAttacks = (int) cInfo.specialParams[0];
+        qAttacks = (int) playerInfo.specialParams[0];
         BasicAttack();
     }
 
     // Stun(float stunDamage)
     private void Stun(){
-        boss.ChangeHealth(-cInfo.specialParams[0]);
+        boss.ChangeHealth(-playerInfo.specialParams[0]);
         boss.isStuned = true;
 
         onStun?.Invoke();
@@ -73,7 +72,7 @@ public class Players : GenericEntity
     private void HealAll(){
         List<Players> party = gm.GetParty();
         foreach(Players p in party){
-            p.ChangeHealth(cInfo.specialParams[0]);
+            p.ChangeHealth(playerInfo.specialParams[0]);
         }
     }
 }

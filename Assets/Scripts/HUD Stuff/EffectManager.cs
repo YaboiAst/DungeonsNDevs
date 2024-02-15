@@ -27,8 +27,7 @@ public class EffectManager : MonoBehaviour
         parent = GetComponentInParent<GenericEntity>();
         gm = GameManager.instance;
 
-        parent.onTakeDamage.AddListener(TakeDamageEffect);
-        parent.onHealDamage.AddListener(HealDamageEffect);
+        parent.onHealthChange.AddListener(ChangeHealthEffect);
         parent.onShield.AddListener(ShieldEffect);
         parent.onStun.AddListener(StunEffect);
     }
@@ -43,21 +42,21 @@ public class EffectManager : MonoBehaviour
         Instantiate(shieldEffect, this.transform);
     }
 
-    private void HealDamageEffect()
-    {
-        Instantiate(healEffect, this.transform);
+    private void ChangeHealthEffect(float amount){
+        GameObject go;
+        if(amount == 0)
+            return;
+
+        if(amount > 0)
+            go = Instantiate(healEffect, this.transform);
+        else
+            go = Instantiate(hitEffect, this.transform);
+
+        AnimateEffect(go, amount);
     }
 
-    /// <summary>
-    /// TODO
-    ///     Find some way to get the amount of damage per event
-    ///         UnityEvent parameters?
-    /// </summary>
-
-    private void TakeDamageEffect()
-    {
-        GameObject go = Instantiate(hitEffect, this.transform);
-        go.GetComponent<TextMeshProUGUI>().text = gm.active.cInfo.basicAttack.ToString();
+    private void AnimateEffect(GameObject go, float amount){
+        go.GetComponent<TextMeshProUGUI>().text = Mathf.Abs(amount).ToString();
 
         go.transform.DOScale(1f, 0.4f);
 

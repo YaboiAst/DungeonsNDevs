@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     private List<Players> party;
 
     [Header("Boss Manager")]
-    [SerializeField] GenericEntity boss; 
+    [SerializeField] Bosses boss; 
 
     [Header("Turn Logic")]
     [SerializeField] private List<GenericEntity> roundOrder;
@@ -24,10 +24,9 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public UnityEvent onPassTurn;
     [HideInInspector] public UnityEvent onBossKill;
 
-    public GenericEntity GetActiveTurn(){ return active; }
-
-    public GenericEntity GetBoss(){ return boss; }
+    public Bosses GetBoss(){ return boss; }
     public List<Players> GetParty() { return party; }
+    public GenericEntity GetActiveTurn(){ return active; }
 
     private void Awake() {
         if(instance == null){
@@ -38,20 +37,16 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
 
         party = new List<Players>();
-    }
-
-    private void Start() {
-        //AddToParty(fullParty[Random.Range(0, 4)]);
-
         //Just for tests
         AddToParty(fullParty[0]);
         AddToParty(fullParty[1]);
         AddToParty(fullParty[2]);
         AddToParty(fullParty[3]);
-        StartCombat();
+    }
 
-        turn = -1;
-        Next();
+    private void Start() {
+        //AddToParty(fullParty[Random.Range(0, 4)]);
+        StartCombat();
     }
 
     private void StartCombat(){
@@ -62,6 +57,9 @@ public class GameManager : MonoBehaviour
         roundOrder.Add(party[2]);
         roundOrder.Add(party[3]);
         roundOrder.Add(boss);
+
+        turn = -1;
+        Next();
     }
 
     public void Next(){
@@ -70,12 +68,17 @@ public class GameManager : MonoBehaviour
             turn = 0; 
 
         active = roundOrder[turn];
-        if(active.isPlayer()){
-            active.GetComponent<Players>().ManageCooldown();
-        }
+
         if(active.isStuned){
             active.isStuned = false;
             Next();
+        }
+
+        if(active.isPlayer()){
+            active.GetComponent<Players>().ManageCooldown();
+        }
+        else{
+            active.GetComponent<Bosses>().Invoke("TakeAction", 2f);
         }
 
         onPassTurn?.Invoke();

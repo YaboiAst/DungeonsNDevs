@@ -18,15 +18,18 @@ public class TurnAnim : MonoBehaviour
     void Start()
     {
         gm = GameManager.instance;
-        gm.onPassTurn.AddListener(ChangeTurnAnim);
 
         turnText = GetComponentInChildren<TextMeshProUGUI>();
+
+        seqTurn = DOTween.Sequence();
+        seqTurn.AppendCallback(() => SetActiveName());
+        seqTurn.Append(transform.DOMoveY(transform.position.y + offset, animationDuration)
+        .SetEase(Ease.OutQuad))
+        .OnComplete(() => gm.onPassTurn.AddListener(ChangeTurnAnim));
     }
 
     private void ChangeTurnAnim(){
         seqTurn = DOTween.Sequence();
-
-        seqTurn.AppendInterval(.5f);
 
         seqTurn.Append(transform.DOMoveY(transform.position.y - offset, animationDuration)
         .SetEase(Ease.OutQuad)
