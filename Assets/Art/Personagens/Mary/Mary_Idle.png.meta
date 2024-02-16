@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 110
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -126,10 +126,10 @@ TextureImporter:
       name: Mary_Idle_0
       rect:
         serializedVersion: 2
-        x: 19
-        y: 85
-        width: 24
-        height: 36
+        x: 152
+        y: 680
+        width: 192
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 709e3f58ec54adc42a00d8ebe51db472
-      internalID: -210253751
+      spriteID: 1f1dd94a851f21940b71238016553707
+      internalID: -1662096196
       vertices: []
       indices: 
       edges: []
@@ -147,10 +147,10 @@ TextureImporter:
       name: Mary_Idle_1
       rect:
         serializedVersion: 2
-        x: 85
-        y: 85
-        width: 24
-        height: 36
+        x: 682
+        y: 680
+        width: 192
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2996c559177c04741bbc3f60057ba5b2
-      internalID: 1670980550
+      spriteID: 9970ef3e62eee28499328b0a2b35ccfb
+      internalID: -621752012
       vertices: []
       indices: 
       edges: []
@@ -168,10 +168,10 @@ TextureImporter:
       name: Mary_Idle_2
       rect:
         serializedVersion: 2
-        x: 19
-        y: 19
-        width: 24
-        height: 36
+        x: 154
+        y: 152
+        width: 192
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,8 +179,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5814fa33cd630ae41bd327e831a75943
-      internalID: 1692973371
+      spriteID: cab2d257edc91a243a37aed240c9fb6b
+      internalID: -2069920511
       vertices: []
       indices: 
       edges: []
@@ -189,10 +189,10 @@ TextureImporter:
       name: Mary_Idle_3
       rect:
         serializedVersion: 2
-        x: 85
-        y: 19
-        width: 24
-        height: 36
+        x: 680
+        y: 152
+        width: 192
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c08235a797fabe3468b55ea3df73a070
-      internalID: 1316401670
+      spriteID: 666d77fe5e72d8647869a8ada838aba2
+      internalID: 374993186
       vertices: []
       indices: 
       edges: []
@@ -217,10 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Mary_Idle_0: -210253751
-      Mary_Idle_1: 1670980550
-      Mary_Idle_2: 1692973371
-      Mary_Idle_3: 1316401670
+      Mary_Idle_0: -1662096196
+      Mary_Idle_1: -621752012
+      Mary_Idle_2: -2069920511
+      Mary_Idle_3: 374993186
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

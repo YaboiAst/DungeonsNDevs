@@ -17,15 +17,15 @@ MonoBehaviour:
   basicAttack: 5
   art: {fileID: 21300000, guid: c04e9ececde03f345a3e4809c0aecae9, type: 3}
   classIcon: {fileID: 0}
-  animator: {fileID: 9100000, guid: 12b51ee0df83c774da582ed624d22543, type: 2}
+  animator: {fileID: 9100000, guid: 68b06344d70e8554d9a66403a16ebd6a, type: 2}
   threatLevel: 2
   specialAttack: HealAll
   specialParams:
   - 5
   specialCooldown: 2
   basicAttackButton: {fileID: 21300000, guid: c8dba42e604169a478202a789e101ef1, type: 3}
-  basicAttackName: 
+  basicAttackName: ' Command: Attack'
   basicAttackDescription: 
   specialAttackButton: {fileID: 21300000, guid: babe8f2fbde3fed4ab76b9b03fbc3caa, type: 3}
-  specialAttackName: 
+  specialAttackName: ' Command: Cure'
   specialAttackDescription: 

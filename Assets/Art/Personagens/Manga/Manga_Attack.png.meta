@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 110
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: manga_idle_0
+      name: Manga_Attack_0
       rect:
         serializedVersion: 2
-        x: 61
-        y: 446
-        width: 46
-        height: 38
+        x: 87
+        y: 136
+        width: 377
+        height: 304
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de6909309d431dc488e36fde02931b7e
-      internalID: -857307240
+      spriteID: bbd7b18e4c7715b4482b75b875d01a7c
+      internalID: 1801899624
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: manga_idle_1
+      name: Manga_Attack_1
       rect:
         serializedVersion: 2
-        x: 191
-        y: 446
-        width: 46
-        height: 38
+        x: 599
+        y: 136
+        width: 377
+        height: 304
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c917d8df31752a46a335314425d7093
-      internalID: -1320351656
+      spriteID: 64273fa70f9b52446924d46115b6d6f9
+      internalID: -1929510047
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: manga_idle_2
+      name: Manga_Attack_2
       rect:
         serializedVersion: 2
-        x: 321
-        y: 446
-        width: 46
-        height: 38
+        x: 1111
+        y: 136
+        width: 377
+        height: 304
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e4e79cdec641e34ea84a5a688b2db59
-      internalID: -1969801328
+      spriteID: 44ba4162805fa434790045bfcd3bb6a6
+      internalID: 1994570563
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: manga_idle_3
+      name: Manga_Attack_3
       rect:
         serializedVersion: 2
-        x: 451
-        y: 446
-        width: 46
-        height: 38
+        x: 1624
+        y: 136
+        width: 377
+        height: 304
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,260 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea433dc09a477c74b983e956c1be9b6c
-      internalID: 600346964
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: manga_idle_4
-      rect:
-        serializedVersion: 2
-        x: 61
-        y: 316
-        width: 46
-        height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 67062138f18f61a4597cf4154fc60f2b
-      internalID: 1151698924
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: manga_idle_5
-      rect:
-        serializedVersion: 2
-        x: 191
-        y: 316
-        width: 46
-        height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 76c816f6e40b40c409ad62d10a8a1f13
-      internalID: -1446048051
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: manga_idle_6
-      rect:
-        serializedVersion: 2
-        x: 321
-        y: 316
-        width: 46
-        height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aadde424c32044a40bc900263946ba1b
-      internalID: 1905309101
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: manga_idle_7
-      rect:
-        serializedVersion: 2
-        x: 451
-        y: 316
-        width: 46
-        height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e80be1ed08f21f64fbcc9352de24ba92
-      internalID: 990188512
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: manga_idle_8
-      rect:
-        serializedVersion: 2
-        x: 61
-        y: 186
-        width: 46
-        height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ce9828517a17f6a43980ad0fafd9cc72
-      internalID: -1909233434
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: manga_idle_9
-      rect:
-        serializedVersion: 2
-        x: 191
-        y: 186
-        width: 46
-        height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bf209896acc4e2545a91ad103bb28e1d
-      internalID: 2058787575
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: manga_idle_10
-      rect:
-        serializedVersion: 2
-        x: 321
-        y: 186
-        width: 46
-        height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d448ffd2e8e30a847bcb353af2802749
-      internalID: -982704077
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: manga_idle_11
-      rect:
-        serializedVersion: 2
-        x: 451
-        y: 186
-        width: 46
-        height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a0f68e2963a5ea4aac4bafe0e9289bd
-      internalID: 695646199
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: manga_idle_12
-      rect:
-        serializedVersion: 2
-        x: 61
-        y: 56
-        width: 46
-        height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8938997f9e7636f49872c9661c5289dd
-      internalID: 195490245
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: manga_idle_13
-      rect:
-        serializedVersion: 2
-        x: 191
-        y: 56
-        width: 46
-        height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 20119e2ada7fa8a449a9e1a8815dea7d
-      internalID: -477009333
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: manga_idle_14
-      rect:
-        serializedVersion: 2
-        x: 321
-        y: 56
-        width: 46
-        height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f416c66d56f655e46847c91b0f923da1
-      internalID: 930955256
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: manga_idle_15
-      rect:
-        serializedVersion: 2
-        x: 451
-        y: 56
-        width: 46
-        height: 38
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 772cf5bb06254b244a2d86aed904f8d6
-      internalID: -720805806
+      spriteID: 3f57a4511a2a69449a2c3208fd3c7215
+      internalID: 1402659380
       vertices: []
       indices: 
       edges: []
@@ -469,23 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      manga_idle_0: -857307240
-      manga_idle_1: -1320351656
-      manga_idle_10: -982704077
-      manga_idle_11: 695646199
-      manga_idle_12: 195490245
-      manga_idle_13: -477009333
-      manga_idle_14: 930955256
-      manga_idle_15: -720805806
-      manga_idle_16: 585571569
-      manga_idle_2: -1969801328
-      manga_idle_3: 600346964
-      manga_idle_4: 1151698924
-      manga_idle_5: -1446048051
-      manga_idle_6: 1905309101
-      manga_idle_7: 990188512
-      manga_idle_8: -1909233434
-      manga_idle_9: 2058787575
+      Manga_Attack_0: 1801899624
+      Manga_Attack_1: -1929510047
+      Manga_Attack_2: 1994570563
+      Manga_Attack_3: 1402659380
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

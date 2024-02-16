@@ -17,7 +17,7 @@ MonoBehaviour:
   basicAttack: 5
   art: {fileID: 21300000, guid: 1c02df540ac2b61419de6d22c2c2388a, type: 3}
   classIcon: {fileID: 0}
-  animator: {fileID: 9100000, guid: 1388bcd93afc934428c0332dbb6abda2, type: 2}
+  animator: {fileID: 9100000, guid: f2772af8e5e88a6419ed849ebfed2644, type: 2}
   threatLevel: 3
   specialAttack: SetShield
   specialParams:
@@ -28,4 +28,4 @@ MonoBehaviour:
   basicAttackDescription: 'Deal [5] damage '
   specialAttackButton: {fileID: 21300000, guid: 5c603e04e0b142c469eda1daae6175bf, type: 3}
   specialAttackName: 'Erase Attacks:'
-  specialAttackDescription: 
+  specialAttackDescription: The next attack will cause [0] damage on you

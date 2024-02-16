@@ -17,15 +17,15 @@ MonoBehaviour:
   basicAttack: 6
   art: {fileID: 21300000, guid: daa4b0a768c791144959cb28b9ea3413, type: 3}
   classIcon: {fileID: 0}
-  animator: {fileID: 9100000, guid: 2435dc7a938f22f45badd77905110128, type: 2}
+  animator: {fileID: 9100000, guid: 88725bd8ff227044a8becc6a8a4352c5, type: 2}
   threatLevel: 1
   specialAttack: MultiAttacks
   specialParams:
   - 2
   specialCooldown: 3
-  basicAttackButton: {fileID: 0}
-  basicAttackName: 
+  basicAttackButton: {fileID: 21300000, guid: 1a499cc92f3d0564aae996fb49501862, type: 3}
+  basicAttackName: 'Creative Arrow:'
   basicAttackDescription: 
-  specialAttackButton: {fileID: 0}
-  specialAttackName: 
+  specialAttackButton: {fileID: 21300000, guid: f2bd71edeb10057489363677256d6252, type: 3}
+  specialAttackName: 'Piercing Animation:'
   specialAttackDescription: 

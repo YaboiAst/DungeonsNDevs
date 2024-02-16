@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 110
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,64 +123,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Naga_Idle_0
-      rect:
-        serializedVersion: 2
-        x: 15
-        y: 83
-        width: 29
-        height: 46
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 522c5d9a4bfe41d4689a903467c199f4
-      internalID: 1705614365
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Naga_Idle_1
-      rect:
-        serializedVersion: 2
-        x: 81
-        y: 83
-        width: 29
-        height: 46
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6c3e2634c95b17a42b4d1f744cac417b
-      internalID: 1786331452
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Naga_Idle_2
       rect:
         serializedVersion: 2
-        x: 15
-        y: 17
-        width: 29
-        height: 46
+        x: 120
+        y: 665
+        width: 224
+        height: 367
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36ee174f898507b44af723fca681e173
-      internalID: 829134753
+      spriteID: 3b184510ed1d46a4a8d131c875a13ccc
+      internalID: -830545052
       vertices: []
       indices: 
       edges: []
@@ -189,19 +147,61 @@ TextureImporter:
       name: Naga_Idle_3
       rect:
         serializedVersion: 2
-        x: 81
-        y: 17
-        width: 29
-        height: 46
+        x: 648
+        y: 664
+        width: 224
+        height: 367
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee53c40a2e15403459e364723d7a4a67
-      internalID: -1066123410
+      spriteID: 5954f6be1ebafda4e834df75612194e9
+      internalID: -13874000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Naga_Idle_6
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 137
+        width: 224
+        height: 367
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c3e160edc81fcb45a1d5963ee55010a
+      internalID: 803577847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Naga_Idle_7
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 135
+        width: 224
+        height: 367
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0dddaf645e9d9b42a3d02c173331813
+      internalID: 1593682229
       vertices: []
       indices: 
       edges: []
@@ -217,10 +217,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Naga_Idle_0: 1705614365
-      Naga_Idle_1: 1786331452
-      Naga_Idle_2: 829134753
-      Naga_Idle_3: -1066123410
+      Naga_Idle_0: -818773364
+      Naga_Idle_1: -1839739817
+      Naga_Idle_2: -830545052
+      Naga_Idle_3: -13874000
+      Naga_Idle_4: -771407967
+      Naga_Idle_5: 2003960577
+      Naga_Idle_6: 803577847
+      Naga_Idle_7: 1593682229
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
