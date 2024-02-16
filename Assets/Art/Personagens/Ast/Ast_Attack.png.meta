@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 41133de5eb085554c9e321991ea20b47
+guid: d5b93bff4d4821c43939eb4ad660befd
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,85 +123,190 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Manga_Idle_0
+      name: Ast_Idle_0
       rect:
         serializedVersion: 2
         x: 18
-        y: 84
-        width: 26
-        height: 38
+        y: 143
+        width: 40
+        height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f97eee79d414bc49bde3578b6198100
-      internalID: -1694146929
+      spriteID: a863274c8449a4148ac3777a98269420
+      internalID: -824575765
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Manga_Idle_1
+      name: Ast_Idle_1
       rect:
         serializedVersion: 2
         x: 84
-        y: 84
-        width: 26
-        height: 38
+        y: 143
+        width: 40
+        height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27912d521b62a124d861178b61ad382c
-      internalID: 2084900508
+      spriteID: 139af271d0acf244295b795553cc7725
+      internalID: 1443499535
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Manga_Idle_2
+      name: Ast_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 143
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f4091b6ff27a484a91aed653a498d14
+      internalID: 1913907555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ast_Idle_3
       rect:
         serializedVersion: 2
         x: 18
-        y: 18
-        width: 26
-        height: 38
+        y: 77
+        width: 40
+        height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5262349ab7ef06408dfa27bf8d89e3e
-      internalID: -2108614028
+      spriteID: 5170c1a3426d72847917a7d42e22a765
+      internalID: -1017206772
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Manga_Idle_3
+      name: Ast_Idle_4
       rect:
         serializedVersion: 2
         x: 84
-        y: 18
-        width: 26
-        height: 38
+        y: 77
+        width: 40
+        height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd13897b4e8bc004db3605b889c67118
-      internalID: 1939556482
+      spriteID: 60d94c2e8dec5ea4f9a1911863c265ad
+      internalID: -1784976453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ast_Idle_5
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 77
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1abce465a3b12434ca30169fa40e9392
+      internalID: -803050735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ast_Idle_6
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 11
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f78ad8f9420813145846de5742f34f66
+      internalID: -1540594382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ast_Idle_7
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 11
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 127eb2705411d67449bcbf47c732fda7
+      internalID: -1285715120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ast_Idle_8
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 11
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33ac000f8b57f0c4bb40d294e9a84d24
+      internalID: -1829125274
       vertices: []
       indices: 
       edges: []
@@ -217,10 +322,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Manga_Idle_0: -1694146929
-      Manga_Idle_1: 2084900508
-      Manga_Idle_2: -2108614028
-      Manga_Idle_3: 1939556482
+      Ast_Idle_0: -824575765
+      Ast_Idle_1: 1443499535
+      Ast_Idle_2: 1913907555
+      Ast_Idle_3: -1017206772
+      Ast_Idle_4: -1784976453
+      Ast_Idle_5: -803050735
+      Ast_Idle_6: -1540594382
+      Ast_Idle_7: -1285715120
+      Ast_Idle_8: -1829125274
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

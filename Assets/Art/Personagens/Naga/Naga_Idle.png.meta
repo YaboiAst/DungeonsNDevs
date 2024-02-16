@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 41133de5eb085554c9e321991ea20b47
+guid: 8b5baf82de636b7469715002356d5b45
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,85 +123,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Manga_Idle_0
+      name: Naga_Idle_0
       rect:
         serializedVersion: 2
-        x: 18
-        y: 84
-        width: 26
-        height: 38
+        x: 15
+        y: 83
+        width: 29
+        height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f97eee79d414bc49bde3578b6198100
-      internalID: -1694146929
+      spriteID: 522c5d9a4bfe41d4689a903467c199f4
+      internalID: 1705614365
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Manga_Idle_1
+      name: Naga_Idle_1
       rect:
         serializedVersion: 2
-        x: 84
-        y: 84
-        width: 26
-        height: 38
+        x: 81
+        y: 83
+        width: 29
+        height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27912d521b62a124d861178b61ad382c
-      internalID: 2084900508
+      spriteID: 6c3e2634c95b17a42b4d1f744cac417b
+      internalID: 1786331452
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Manga_Idle_2
+      name: Naga_Idle_2
       rect:
         serializedVersion: 2
-        x: 18
-        y: 18
-        width: 26
-        height: 38
+        x: 15
+        y: 17
+        width: 29
+        height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5262349ab7ef06408dfa27bf8d89e3e
-      internalID: -2108614028
+      spriteID: 36ee174f898507b44af723fca681e173
+      internalID: 829134753
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Manga_Idle_3
+      name: Naga_Idle_3
       rect:
         serializedVersion: 2
-        x: 84
-        y: 18
-        width: 26
-        height: 38
+        x: 81
+        y: 17
+        width: 29
+        height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd13897b4e8bc004db3605b889c67118
-      internalID: 1939556482
+      spriteID: ee53c40a2e15403459e364723d7a4a67
+      internalID: -1066123410
       vertices: []
       indices: 
       edges: []
@@ -217,10 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Manga_Idle_0: -1694146929
-      Manga_Idle_1: 2084900508
-      Manga_Idle_2: -2108614028
-      Manga_Idle_3: 1939556482
+      Naga_Idle_0: 1705614365
+      Naga_Idle_1: 1786331452
+      Naga_Idle_2: 829134753
+      Naga_Idle_3: -1066123410
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

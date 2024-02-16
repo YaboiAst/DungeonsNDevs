@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 41133de5eb085554c9e321991ea20b47
+guid: 842122961a6e81b46bc27f2eafc941b9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Manga_Idle_0
+      name: Mary_Idle_0
       rect:
         serializedVersion: 2
-        x: 18
-        y: 84
-        width: 26
-        height: 38
+        x: 19
+        y: 85
+        width: 24
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f97eee79d414bc49bde3578b6198100
-      internalID: -1694146929
+      spriteID: 709e3f58ec54adc42a00d8ebe51db472
+      internalID: -210253751
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Manga_Idle_1
+      name: Mary_Idle_1
       rect:
         serializedVersion: 2
-        x: 84
-        y: 84
-        width: 26
-        height: 38
+        x: 85
+        y: 85
+        width: 24
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27912d521b62a124d861178b61ad382c
-      internalID: 2084900508
+      spriteID: 2996c559177c04741bbc3f60057ba5b2
+      internalID: 1670980550
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Manga_Idle_2
+      name: Mary_Idle_2
       rect:
         serializedVersion: 2
-        x: 18
-        y: 18
-        width: 26
-        height: 38
+        x: 19
+        y: 19
+        width: 24
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5262349ab7ef06408dfa27bf8d89e3e
-      internalID: -2108614028
+      spriteID: 5814fa33cd630ae41bd327e831a75943
+      internalID: 1692973371
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Manga_Idle_3
+      name: Mary_Idle_3
       rect:
         serializedVersion: 2
-        x: 84
-        y: 18
-        width: 26
-        height: 38
+        x: 85
+        y: 19
+        width: 24
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd13897b4e8bc004db3605b889c67118
-      internalID: 1939556482
+      spriteID: c08235a797fabe3468b55ea3df73a070
+      internalID: 1316401670
       vertices: []
       indices: 
       edges: []
@@ -217,10 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Manga_Idle_0: -1694146929
-      Manga_Idle_1: 2084900508
-      Manga_Idle_2: -2108614028
-      Manga_Idle_3: 1939556482
+      Mary_Idle_0: -210253751
+      Mary_Idle_1: 1670980550
+      Mary_Idle_2: 1692973371
+      Mary_Idle_3: 1316401670
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
