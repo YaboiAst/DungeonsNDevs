@@ -23,7 +23,7 @@ MonoBehaviour:
   specialParams:
   - 1
   specialCooldown: 2
-  basicAttackName: 
-  basicAttackDescription: 
-  specialAttackName: 
+  basicAttackName: 'Draw Attacks: '
+  basicAttackDescription: 'Deal [5] damage '
+  specialAttackName: 'Erase Attacks:'
   specialAttackDescription: 
