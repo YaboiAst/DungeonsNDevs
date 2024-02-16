@@ -24,6 +24,7 @@ public class Players : GenericEntity
     public int GetThreatLevel(){ return playerInfo.threatLevel; }
 
     public override void BasicAttack(){
+        charAnimator.SetTrigger("Ataque");
         boss.ChangeHealth(-playerInfo.basicAttack);
 
         if(qAttacks > 1){
@@ -65,7 +66,7 @@ public class Players : GenericEntity
         boss.ChangeHealth(-playerInfo.specialParams[0]);
         boss.isStuned = true;
 
-        onStun?.Invoke();
+        boss.onStun?.Invoke();
     }
 
     // HeallAll(float healAmount)

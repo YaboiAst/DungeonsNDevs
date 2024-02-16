@@ -34,12 +34,12 @@ public class EffectManager : MonoBehaviour
 
     private void StunEffect()
     {
-        Instantiate(stunEffect, this.transform);
+        //Instantiate(stunEffect, this.transform);
     }
 
     private void ShieldEffect()
     {
-        Instantiate(shieldEffect, this.transform);
+        //Instantiate(shieldEffect, this.transform);
     }
 
     private void ChangeHealthEffect(float amount){

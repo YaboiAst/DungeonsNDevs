@@ -16,9 +16,11 @@ public class Player : Character
 
     [Space(10)]
 
+    public Sprite basicAttackButton;
     public string basicAttackName;
     public string basicAttackDescription;
     [Space(5)]
+    public Sprite specialAttackButton;
     public string specialAttackName;
     public string specialAttackDescription;
 }

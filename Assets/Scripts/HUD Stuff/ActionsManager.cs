@@ -10,6 +10,7 @@ public class ActionsManager : MonoBehaviour
 
     [SerializeField] private Transform actionsTransform;
     [SerializeField] private Button basicAttackButton, specialAttackButton;
+    private Image basicAttackButtonArt, specialAttackButtonArt;
 
     Sequence seqAction;
     public float offset;
@@ -19,6 +20,9 @@ public class ActionsManager : MonoBehaviour
     private void Start() {
         gm = GameManager.instance;
         gm.onPassTurn.AddListener(ActionAnim);
+
+        basicAttackButtonArt = basicAttackButton.GetComponent<Image>();
+        specialAttackButtonArt = specialAttackButton.GetComponent<Image>();
     }
 
     public void BasicAttackButton(){
@@ -45,11 +49,20 @@ public class ActionsManager : MonoBehaviour
         seqAction = DOTween.Sequence();
 
         if(gm.active.isPlayer()){
+            seqAction.AppendCallback(() => SetButtonImage());
             seqAction.AppendInterval(idleDuration);
             seqAction.Append(actionsTransform.DOMoveY(actionsTransform.position.y + offset, animationDuration)
             .SetEase(Ease.InQuad)
             .OnComplete(() => SetButtons(true)));
         }
+    }
+
+    private void SetButtonImage(){
+        if(!gm.active.isPlayer())
+            return;
+
+        basicAttackButtonArt.sprite = gm.active.GetPlayer().basicAttackButton;
+        specialAttackButtonArt.sprite = gm.active.GetPlayer().specialAttackButton;
     }
 
     private void SetButtons(bool mode){
