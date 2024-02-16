@@ -9,6 +9,7 @@ public abstract class GenericEntity : MonoBehaviour
 {
     internal Character cInfo;
     internal GameManager gm;
+    internal Animator charAnimator;
 
     internal float currentHealth;
     internal float hasShield = 0;
@@ -32,6 +33,8 @@ public abstract class GenericEntity : MonoBehaviour
         currentHealth = cInfo.maxHealth;
 
         GetComponent<SpriteRenderer>().sprite = cInfo.art;
+        charAnimator = GetComponent<Animator>();
+        charAnimator.runtimeAnimatorController = cInfo.animator;
         //GetComponent<Animator>().runtimeAnimatorController = cInfo.animator;
 
         gm = GameManager.instance;
