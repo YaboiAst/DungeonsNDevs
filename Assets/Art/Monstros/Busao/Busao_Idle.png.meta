@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8eabbd6133c7f2f4a8b38df32f1b3787
+guid: 92cb94249137bda4abdcf06dc9856c07
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,211 +123,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: naga-_idle_4
+      name: Busao_Idle_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 82
-        width: 29
-        height: 48
+        x: 0
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b4f87dc646c240449e3aa242ec85f81
-      internalID: 12057173
+      spriteID: d68c76b4601bc6e4abcfc5a576a78074
+      internalID: -72881342
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: naga-_idle_5
+      name: Busao_Idle_1
       rect:
         serializedVersion: 2
-        x: 81
-        y: 82
-        width: 29
-        height: 48
+        x: 512
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b86a16188886e1146895c5185bf0ca32
-      internalID: -709845620
+      spriteID: a9e22dbf74da84d40b0a57034569cbca
+      internalID: 431715321
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: naga-_idle_6
+      name: Busao_Idle_2
       rect:
         serializedVersion: 2
-        x: 147
-        y: 82
-        width: 29
-        height: 48
+        x: 1024
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ae1db2527ceed441b56d5c565d695ed
-      internalID: 552013012
+      spriteID: 161d41e90722bd344b884ec6f2e912da
+      internalID: 536156742
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: naga-_idle_7
+      name: Busao_Idle_3
       rect:
         serializedVersion: 2
-        x: 213
-        y: 82
-        width: 29
-        height: 48
+        x: 1536
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53663d6c898113946a0e6dd80621a7f2
-      internalID: 1133169143
+      spriteID: 3a3d26f43fdfa7146b51c8467f5bb864
+      internalID: -1540495587
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: naga-_idle_0
+      name: Busao_Idle_4
       rect:
         serializedVersion: 2
-        x: 15
-        y: 148
-        width: 29
-        height: 48
+        x: 2048
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7f39214a0a5e4d4790535f79a2fcb54
-      internalID: 1646676661
+      spriteID: 8e327c2df1ed5b74fb41f5b320ea2b02
+      internalID: -1147522106
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: naga-_idle_1
+      name: Busao_Idle_5
       rect:
         serializedVersion: 2
-        x: 81
-        y: 148
-        width: 29
-        height: 48
+        x: 2560
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c7bb81a32ed6c24cb6e052a2c76d3cd
-      internalID: 2121075257
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: naga-_idle_2
-      rect:
-        serializedVersion: 2
-        x: 147
-        y: 148
-        width: 29
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 97651c659e2db9548b4e262930ff8e2f
-      internalID: -828098613
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: naga-_idle_3
-      rect:
-        serializedVersion: 2
-        x: 213
-        y: 148
-        width: 29
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c03ae2efa6ff4684ab7edbd0cdd6b940
-      internalID: -973669134
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: naga-_idle_8
-      rect:
-        serializedVersion: 2
-        x: 15
-        y: 16
-        width: 29
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e4b7ac106d9b24a438eadb7dc15f189e
-      internalID: 1519794543
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: naga-_idle_9
-      rect:
-        serializedVersion: 2
-        x: 81
-        y: 16
-        width: 29
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d9442d22c61346a488216c45f319b895
-      internalID: -2097999057
+      spriteID: 36b0bf086fadc8948ae8efd342853df1
+      internalID: -870995403
       vertices: []
       indices: 
       edges: []
@@ -343,16 +259,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      naga-_idle_0: 1646676661
-      naga-_idle_1: 2121075257
-      naga-_idle_2: -828098613
-      naga-_idle_3: -973669134
-      naga-_idle_4: 12057173
-      naga-_idle_5: -709845620
-      naga-_idle_6: 552013012
-      naga-_idle_7: 1133169143
-      naga-_idle_8: 1519794543
-      naga-_idle_9: -2097999057
+      Busao_Idle_0: -72881342
+      Busao_Idle_1: 431715321
+      Busao_Idle_2: 536156742
+      Busao_Idle_3: -1540495587
+      Busao_Idle_4: -1147522106
+      Busao_Idle_5: -870995403
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
