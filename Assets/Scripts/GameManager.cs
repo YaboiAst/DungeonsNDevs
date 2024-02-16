@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     private List<Players> party;
 
     [Header("Boss Manager")]
-    [SerializeField] GenericEntity boss; 
+    [SerializeField] Bosses boss; 
 
     [Header("Turn Logic")]
     [SerializeField] private List<GenericEntity> roundOrder;
@@ -24,9 +24,9 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public UnityEvent onPassTurn;
     [HideInInspector] public UnityEvent onBossKill;
 
+    public Bosses GetBoss(){ return boss; }
+    public List<Players> GetParty() { return party; }
     public GenericEntity GetActiveTurn(){ return active; }
-
-    public GenericEntity GetBoss(){ return boss; }
 
     private void Awake() {
         if(instance == null){
@@ -37,22 +37,16 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
 
         party = new List<Players>();
-    }
-
-    private void Start() {
-        //AddToParty(fullParty[Random.Range(0, 4)]);
-
         //Just for tests
         AddToParty(fullParty[0]);
         AddToParty(fullParty[1]);
         AddToParty(fullParty[2]);
         AddToParty(fullParty[3]);
+    }
+
+    private void Start() {
+        //AddToParty(fullParty[Random.Range(0, 4)]);
         StartCombat();
-
-        onPassTurn.AddListener(ManageCooldowns);
-
-        turn = -1;
-        Next();
     }
 
     private void StartCombat(){
@@ -63,6 +57,9 @@ public class GameManager : MonoBehaviour
         roundOrder.Add(party[2]);
         roundOrder.Add(party[3]);
         roundOrder.Add(boss);
+
+        turn = -1;
+        Next();
     }
 
     public void Next(){
@@ -72,13 +69,19 @@ public class GameManager : MonoBehaviour
 
         active = roundOrder[turn];
 
-        onPassTurn?.Invoke();
-    }
-
-    private void ManageCooldowns(){
-        foreach(Players p in party){
-            p.ManageCooldown();
+        if(active.isStuned){
+            active.isStuned = false;
+            Next();
         }
+
+        if(active.isPlayer()){
+            active.GetComponent<Players>().ManageCooldown();
+        }
+        else{
+            active.GetComponent<Bosses>().Invoke("TakeAction", 2f);
+        }
+
+        onPassTurn?.Invoke();
     }
 
     private void AddToParty(Players player){

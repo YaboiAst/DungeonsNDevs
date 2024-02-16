@@ -26,31 +26,42 @@ public class ActionsManager : MonoBehaviour
     }
 
     public void SpecialAttackButton(){
-        gm.active.SpecialAttack();
+        Players active = (Players) gm.active;
+        active.SpecialAttack();
     }
 
     public void CallNextTurn(){
-        gm.Next();
+        seqAction = DOTween.Sequence();
+
+        seqAction.AppendCallback(() => SetButtons(false));
+        seqAction.AppendInterval(.2f);
+        
+        seqAction.Append(actionsTransform.DOMoveY(actionsTransform.position.y - offset, animationDuration)
+        .SetEase(Ease.OutQuad))
+        .OnComplete(() => gm.Next());
     }
 
     public void ActionAnim(){
         seqAction = DOTween.Sequence();
 
-        seqAction.AppendCallback(() => SetButtons(false));
-        seqAction.AppendInterval(.5f);
-
-        seqAction.Append(actionsTransform.DOMoveY(actionsTransform.position.y - offset, animationDuration)
-        .SetEase(Ease.OutQuad));
-
-        seqAction.AppendInterval(idleDuration);
-
-        seqAction.Append(actionsTransform.DOMoveY(actionsTransform.position.y, animationDuration)
-        .SetEase(Ease.InQuad)
-        .OnComplete(() => SetButtons(true)));
+        if(gm.active.isPlayer()){
+            seqAction.AppendInterval(idleDuration);
+            seqAction.Append(actionsTransform.DOMoveY(actionsTransform.position.y + offset, animationDuration)
+            .SetEase(Ease.InQuad)
+            .OnComplete(() => SetButtons(true)));
+        }
     }
 
     private void SetButtons(bool mode){
+        if(!gm.active.isPlayer())
+            return;
+        
         basicAttackButton.interactable = mode;
-        specialAttackButton.interactable = mode;
+        if(gm.active.GetComponent<Players>().specialCooldownCounter > 0){
+            specialAttackButton.interactable = false;
+        }
+        else{
+            specialAttackButton.interactable = mode;
+        }
     }
 }
