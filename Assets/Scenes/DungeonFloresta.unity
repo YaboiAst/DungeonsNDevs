@@ -3730,7 +3730,7 @@ GameObject:
   - component: {fileID: 1597561897}
   - component: {fileID: 1597561896}
   m_Layer: 0
-  m_Name: Ent_Idle_0
+  m_Name: Ent_Idle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
