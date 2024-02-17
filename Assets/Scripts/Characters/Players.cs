@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Players : GenericEntity
@@ -10,10 +11,15 @@ public class Players : GenericEntity
     private Bosses boss;
 
     [HideInInspector] public int specialCooldownCounter;
-    
-    internal override void Start() {
-        base.Start();
-        boss = gm.GetBoss();
+
+    internal override void SetupCharacter(){
+        base.SetupCharacter();
+        boss = tm.GetBoss();
+    }
+
+    public void SetPlayerInfo(Player playerInfo){
+        this.playerInfo = playerInfo;
+        characterSet?.Invoke();
     }
 
     public override bool isPlayer(){ return true; }
@@ -71,7 +77,7 @@ public class Players : GenericEntity
 
     // HeallAll(float healAmount)
     private void HealAll(){
-        List<Players> party = gm.GetParty();
+        List<Players> party = tm.GetParty();
         foreach(Players p in party){
             p.ChangeHealth(playerInfo.specialParams[0]);
         }

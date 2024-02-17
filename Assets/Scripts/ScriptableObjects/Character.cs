@@ -17,5 +17,5 @@ public class Character : ScriptableObject
     [Space(10)]
 
     public Sprite art;
-    public AnimatorController animator;
+    public AnimatorController combatAnimator;
 }

@@ -11,19 +11,19 @@ public class Bosses : GenericEntity
     List<Players> decisionList;
     private Players target;
 
-
-    internal override void Start() {
-        base.Start();
-        UnityEngine.Random.InitState((int) long.Parse(DateTime.Now.ToString("yyyyMMddHHmmss")));
-        party = gm.GetParty();
+    internal override void SetupCharacter(){
+        base.SetupCharacter();
+        party = tm.GetParty();
 
         decisionList = new List<Players>();
         foreach(Players player in party){
-            int size = player.GetThreatLevel();
-            for(int i = 0; i < size; i++){
-                decisionList.Add(player);
-            }
+            gm.AddToListFrom(decisionList, party);
         }
+    }
+
+    public void SetBossInfo(Boss bossInfo){
+        this.bossInfo = bossInfo;
+        characterSet?.Invoke();
     }
 
     public override bool isPlayer() { return false; }
@@ -32,14 +32,13 @@ public class Bosses : GenericEntity
     public override Player GetPlayer(){ return null; }
 
     public void TakeAction(){
-        int rand = UnityEngine.Random.Range(0, decisionList.Count);
-        target = decisionList.ToArray()[rand];
+        target = gm.SelectFrom(decisionList);
 
         Invoke("BasicAttack", 2f);
     }
 
     public override void BasicAttack(){
         target.ChangeHealth(-bossInfo.basicAttack);
-        gm.Next();
+        tm.Next();
     }
 }

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class TurnAnim : MonoBehaviour
 {
-    TurnManager gm;
+    TurnManager tm;
     private TextMeshProUGUI turnText;
     private Sequence seqTurn;
 
@@ -17,15 +17,16 @@ public class TurnAnim : MonoBehaviour
 
     void Start()
     {
-        gm = TurnManager.instance;
-
+        tm = TurnManager.instance;
+        tm.disableCombat.AddListener(() => this.enabled = false);
+        
         turnText = GetComponentInChildren<TextMeshProUGUI>();
 
         seqTurn = DOTween.Sequence();
         seqTurn.AppendCallback(() => SetActiveName());
         seqTurn.Append(transform.DOMoveY(transform.position.y + offset, animationDuration)
         .SetEase(Ease.OutQuad))
-        .OnComplete(() => gm.onPassTurn.AddListener(ChangeTurnAnim));
+        .OnComplete(() => tm.onPassTurn.AddListener(ChangeTurnAnim));
     }
 
     private void ChangeTurnAnim(){
@@ -42,7 +43,7 @@ public class TurnAnim : MonoBehaviour
     }
 
     private void SetActiveName(){
-        GenericEntity active = gm.GetActiveTurn();
+        GenericEntity active = tm.GetActiveTurn();
         turnText.text = active.GetComponent<GenericEntity>().GetEntityName();
         turnText.text += "'s Turn";
     }

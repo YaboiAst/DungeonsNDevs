@@ -8,12 +8,15 @@ public class FloatEvent : UnityEvent<float>{}
 public abstract class GenericEntity : MonoBehaviour
 {
     internal Character cInfo;
-    internal TurnManager gm;
+    internal TurnManager tm;
+    internal GameManager gm;
     internal Animator charAnimator;
 
     internal float currentHealth;
     internal float hasShield = 0;
     internal bool isStuned = false;
+
+    [HideInInspector] public UnityEvent characterSet;
 
     [HideInInspector] public FloatEvent onHealthChange = new FloatEvent();
     [HideInInspector] public UnityEvent onShield;
@@ -28,17 +31,21 @@ public abstract class GenericEntity : MonoBehaviour
     public abstract Player GetPlayer();
     public abstract Boss GetBoss();
 
-    internal virtual void Start() {
-        cInfo = GetCharacter();
-        currentHealth = cInfo.maxHealth;
+    public GenericEntity GetGenericEntity(){
+        return this;
+    }
 
+    internal virtual void SetupCharacter(){
+        gm = GameManager.instance;
+        tm = TurnManager.instance;
+        characterSet.AddListener(SetupCharacter);
+
+        cInfo = GetCharacter();
         GetComponentInChildren<SpriteRenderer>().sprite = cInfo.art;
         charAnimator = GetComponentInChildren<Animator>();
-        charAnimator.runtimeAnimatorController = cInfo.animator;
-        //GetComponent<Animator>().runtimeAnimatorController = cInfo.animator;
+        charAnimator.runtimeAnimatorController = cInfo.combatAnimator;
 
-        gm = TurnManager.instance;
-
+        currentHealth = cInfo.maxHealth;
         onHealthChange?.Invoke(0);
     }
 

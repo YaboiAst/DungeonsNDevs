@@ -9,53 +9,67 @@ public class TurnManager : MonoBehaviour
     [HideInInspector] public static TurnManager instance;
     private GameManager gm;
 
+    [Header("Scene Settings")]
+    [SerializeField] private GameObject playerPrefab;
+    [SerializeField] private Transform[] playerPositions;
+    [Space(5)]
+    //[SerializeField] private GameObject bossPrefab;
+
     [Header("Party Manager")]
     [SerializeField] private int maxPartySize;
-    [SerializeField] private List<Players> fullParty;
     private List<Players> party;
 
     [Header("Boss Manager")]
     [SerializeField] Bosses boss; 
 
     // Turn Logic
-    private List<GenericEntity> roundOrder;
+    private List<GameObject> roundOrder;
     private int turn;
     [HideInInspector] public GenericEntity active;
 
     // EVENTOS ---------------------------------------------
-    [HideInInspector] public UnityEvent onRoomEnter;
+    [HideInInspector] public UnityEvent disableCombat;
     [HideInInspector] public UnityEvent onPassTurn;
     [HideInInspector] public UnityEvent onBossKill;
+    [HideInInspector] public UnityEvent onPlayerDeath;
 
     public GenericEntity GetActiveTurn(){ return active; }
-    public List<Players> GetParty() { return gm.GetParty(); }
-    public Bosses GetBoss(){ return gm.GetBoss(); }
+    public List<Players> GetParty() { return party; }
+    public Bosses GetBoss(){ return boss; }
 
     private void Awake() {
-        //Just for tests
+        if(instance == null){
+            instance = this;
+        }
+        else return;
+    }
+
+    public void SetupCombat(){
+        if(gm == null){
+            gm = GameManager.instance;
+        }
+
         party = new List<Players>();
-        AddToParty(fullParty[0]);
-        AddToParty(fullParty[1]);
-        AddToParty(fullParty[2]);
-        AddToParty(fullParty[3]);
-    }
+        for(int i = 0; i < gm.party.Count; i++){
+            GameObject go = Instantiate(playerPrefab, playerPositions[i].position, playerPositions[i].rotation, this.transform);
+            Players player = go.GetComponent<Players>();
+            player.SetPlayerInfo(gm.party[i]);
 
-    private void Start() { 
-        gm = GameManager.instance;
-        UnityEngine.Random.InitState((int) long.Parse(DateTime.Now.ToString("yyyyMMddHHmmss")));
-        StartCombat(); 
-    }
+            party.Add(player);
+        }
 
-    private void StartCombat(){
-        List<GenericEntity> auxList = new List<GenericEntity>();
-        auxList.AddRange(party);
-        auxList.Add(boss);
+        boss.SetBossInfo(gm.currentBoss);
 
-        roundOrder = new List<GenericEntity>();
-        for(int i = 0; i < maxPartySize + 1; i++){
-            int rand = UnityEngine.Random.Range(0, auxList.Count);
-            roundOrder.Add(auxList[rand]);
-            auxList.RemoveAt(rand);
+        List<GameObject> auxList = new List<GameObject>();
+        foreach(Players player in party){
+            auxList.Add(player.gameObject);
+        }
+        auxList.Add(boss.gameObject);
+
+        roundOrder = new List<GameObject>();
+        int size = auxList.Count;
+        for(int i = 0; i < size; i++){
+            gm.AddToListFrom(roundOrder, auxList);
         }
 
         turn = -1;
@@ -67,7 +81,7 @@ public class TurnManager : MonoBehaviour
         if(turn >= roundOrder.Count)
             turn = 0; 
 
-        active = roundOrder[turn];
+        active = roundOrder[turn].GetComponent<GenericEntity>();
 
         if(active.isStuned){
             active.isStuned = false;
@@ -84,12 +98,8 @@ public class TurnManager : MonoBehaviour
         onPassTurn?.Invoke();
     }
 
-    private void AddToParty(Players player){
-        //roundOrder.Clear();
-
-        if(party.Count < maxPartySize){
-            party.Add(player);
-        }
+    private void OnDisable() {
+        disableCombat?.Invoke();
     }
 
     [ContextMenu("NextTurn")] public void DoNext(){
