@@ -17,6 +17,5 @@ public class Character : ScriptableObject
     [Space(10)]
 
     public Sprite art;
-    public Sprite classIcon;
     public AnimatorController animator;
 }

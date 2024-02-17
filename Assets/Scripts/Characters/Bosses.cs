@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class Bosses : GenericEntity
 
     internal override void Start() {
         base.Start();
+        UnityEngine.Random.InitState((int) long.Parse(DateTime.Now.ToString("yyyyMMddHHmmss")));
         party = gm.GetParty();
 
         decisionList = new List<Players>();
@@ -30,7 +32,7 @@ public class Bosses : GenericEntity
     public override Player GetPlayer(){ return null; }
 
     public void TakeAction(){
-        int rand = Random.Range(0, decisionList.Count);
+        int rand = UnityEngine.Random.Range(0, decisionList.Count);
         target = decisionList.ToArray()[rand];
 
         Invoke("BasicAttack", 2f);

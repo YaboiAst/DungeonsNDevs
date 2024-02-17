@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour
         entity.onHealthChange.AddListener(UpdateUI);
 
         if(entity.isPlayer()){
-            iconUI.sprite = cInfo.classIcon;
+            iconUI.sprite = entity.GetPlayer().classIcon;
         }
         
         nameUI.text = cInfo.characterName;

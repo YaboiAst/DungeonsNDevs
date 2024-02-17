@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class TurnAnim : MonoBehaviour
 {
-    GameManager gm;
+    TurnManager gm;
     private TextMeshProUGUI turnText;
     private Sequence seqTurn;
 
@@ -17,7 +17,7 @@ public class TurnAnim : MonoBehaviour
 
     void Start()
     {
-        gm = GameManager.instance;
+        gm = TurnManager.instance;
 
         turnText = GetComponentInChildren<TextMeshProUGUI>();
 

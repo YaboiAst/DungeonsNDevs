@@ -8,7 +8,7 @@ public class FloatEvent : UnityEvent<float>{}
 public abstract class GenericEntity : MonoBehaviour
 {
     internal Character cInfo;
-    internal GameManager gm;
+    internal TurnManager gm;
     internal Animator charAnimator;
 
     internal float currentHealth;
@@ -32,12 +32,12 @@ public abstract class GenericEntity : MonoBehaviour
         cInfo = GetCharacter();
         currentHealth = cInfo.maxHealth;
 
-        GetComponent<SpriteRenderer>().sprite = cInfo.art;
-        charAnimator = GetComponent<Animator>();
+        GetComponentInChildren<SpriteRenderer>().sprite = cInfo.art;
+        charAnimator = GetComponentInChildren<Animator>();
         charAnimator.runtimeAnimatorController = cInfo.animator;
         //GetComponent<Animator>().runtimeAnimatorController = cInfo.animator;
 
-        gm = GameManager.instance;
+        gm = TurnManager.instance;
 
         onHealthChange?.Invoke(0);
     }

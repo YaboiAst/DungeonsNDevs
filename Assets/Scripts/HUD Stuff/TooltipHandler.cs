@@ -15,13 +15,13 @@ public class TooltipHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     [SerializeField] private TooltipType type;
 
     private TextMeshProUGUI tooltipText;
-    private GameManager gm;
+    private TurnManager gm;
 
     private Button thisButton;
     private string moveName, moveDescription;
     
     private void Start() {
-        gm = GameManager.instance;
+        gm = TurnManager.instance;
         gm.onPassTurn.AddListener(UpdateTooltips);
 
         thisButton = GetComponent<Button>();
@@ -45,6 +45,11 @@ public class TooltipHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitH
             case TooltipType.SPECIAL:
                 moveName = character.specialAttackName;
                 moveDescription = character.specialAttackDescription;
+                break;
+
+            default:
+                moveName = "Ataque básico";
+                moveDescription = "Ataca com o básico";
                 break;
         }
     }

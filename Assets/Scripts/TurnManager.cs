@@ -1,10 +1,12 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class GameManager : MonoBehaviour
+public class TurnManager : MonoBehaviour
 {
-    [HideInInspector] public static GameManager instance;
+    [HideInInspector] public static TurnManager instance;
 
     [Header("Party Manager")]
     [SerializeField] private int maxPartySize;
@@ -14,8 +16,8 @@ public class GameManager : MonoBehaviour
     [Header("Boss Manager")]
     [SerializeField] Bosses boss; 
 
-    [Header("Turn Logic")]
-    [SerializeField] private List<GenericEntity> roundOrder;
+    // Turn Logic
+    private List<GenericEntity> roundOrder;
     private int turn;
     [HideInInspector] public GenericEntity active;
 
@@ -36,27 +38,30 @@ public class GameManager : MonoBehaviour
         else 
             Destroy(this.gameObject);
 
-        party = new List<Players>();
         //Just for tests
+        party = new List<Players>();
         AddToParty(fullParty[0]);
         AddToParty(fullParty[1]);
         AddToParty(fullParty[2]);
         AddToParty(fullParty[3]);
     }
 
-    private void Start() {
-        //AddToParty(fullParty[Random.Range(0, 4)]);
-        StartCombat();
+    private void Start() { 
+        UnityEngine.Random.InitState((int) long.Parse(DateTime.Now.ToString("yyyyMMddHHmmss")));
+        StartCombat(); 
     }
 
     private void StartCombat(){
-        roundOrder = new List<GenericEntity>();
+        List<GenericEntity> auxList = new List<GenericEntity>();
+        auxList.AddRange(party);
+        auxList.Add(boss);
 
-        roundOrder.Add(party[0]);
-        roundOrder.Add(party[1]);
-        roundOrder.Add(party[2]);
-        roundOrder.Add(party[3]);
-        roundOrder.Add(boss);
+        roundOrder = new List<GenericEntity>();
+        for(int i = 0; i < maxPartySize + 1; i++){
+            int rand = UnityEngine.Random.Range(0, auxList.Count);
+            roundOrder.Add(auxList[rand]);
+            auxList.RemoveAt(rand);
+        }
 
         turn = -1;
         Next();

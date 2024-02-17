@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ActionsManager : MonoBehaviour
 {
-    GameManager gm;
+    TurnManager gm;
 
     [SerializeField] private Transform actionsTransform;
     [SerializeField] private Button basicAttackButton, specialAttackButton;
@@ -18,7 +18,7 @@ public class ActionsManager : MonoBehaviour
     public float idleDuration = 0.5f;
 
     private void Start() {
-        gm = GameManager.instance;
+        gm = TurnManager.instance;
         gm.onPassTurn.AddListener(ActionAnim);
 
         basicAttackButtonArt = basicAttackButton.GetComponent<Image>();

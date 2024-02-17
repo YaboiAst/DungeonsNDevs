@@ -8,7 +8,7 @@ using UnityEngine;
 public class EffectManager : MonoBehaviour
 {
     private GenericEntity parent;
-    private GameManager gm;
+    private TurnManager gm;
 
     [Header("Hit")]
     [SerializeField] private GameObject hitEffect;
@@ -25,7 +25,7 @@ public class EffectManager : MonoBehaviour
 
     private void Start() {
         parent = GetComponentInParent<GenericEntity>();
-        gm = GameManager.instance;
+        gm = TurnManager.instance;
 
         parent.onHealthChange.AddListener(ChangeHealthEffect);
         parent.onShield.AddListener(ShieldEffect);

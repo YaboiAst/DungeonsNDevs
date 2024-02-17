@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using NaughtyAttributes;
 using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.Events;
@@ -8,7 +9,10 @@ using UnityEngine.Events;
 [CreateAssetMenu(fileName = "New Character", menuName = "Character/Player")]
 public class Player : Character
 {
+    public Sprite classIcon;
     public int threatLevel;
+
+    [Space(10)]
 
     public string specialAttack;
     public float[] specialParams;
@@ -18,9 +22,11 @@ public class Player : Character
 
     public Sprite basicAttackButton;
     public string basicAttackName;
+    [ResizableTextArea]
     public string basicAttackDescription;
     [Space(5)]
     public Sprite specialAttackButton;
     public string specialAttackName;
+    [ResizableTextArea]
     public string specialAttackDescription;
 }
