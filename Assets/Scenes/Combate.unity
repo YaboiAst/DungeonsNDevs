@@ -2326,7 +2326,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1023283256638183075, guid: 0563e8c8e5993d9ae8100bcd3a10832d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.96
+      value: 4.97
       objectReference: {fileID: 0}
     - target: {fileID: 1023283256638183075, guid: 0563e8c8e5993d9ae8100bcd3a10832d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2380,6 +2380,10 @@ PrefabInstance:
       propertyPath: m_HorizontalAlignment
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3731140592466776203, guid: 0563e8c8e5993d9ae8100bcd3a10832d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.52
+      objectReference: {fileID: 0}
     - target: {fileID: 5882753070555965878, guid: 0563e8c8e5993d9ae8100bcd3a10832d, type: 3}
       propertyPath: m_Size.x
       value: 5.12
@@ -2402,7 +2406,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7706874703312921320, guid: 0563e8c8e5993d9ae8100bcd3a10832d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.66
+      value: 1.74
       objectReference: {fileID: 0}
     - target: {fileID: 8275402297552087360, guid: 0563e8c8e5993d9ae8100bcd3a10832d, type: 3}
       propertyPath: m_Camera
