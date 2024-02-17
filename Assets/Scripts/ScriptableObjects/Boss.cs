@@ -8,7 +8,5 @@ using UnityEngine.Events;
 [CreateAssetMenu(fileName = "New Character", menuName = "Character/Boss")]
 public class Boss : Character
 {
-    public enum biomes{CITY, FOREST, OCEAN, VULCAN, CAVE};
-
-    public biomes nativeBiome;
+    public Biome.Biomes nativeBiome;
 }

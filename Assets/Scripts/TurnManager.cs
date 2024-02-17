@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class TurnManager : MonoBehaviour
 {
     [HideInInspector] public static TurnManager instance;
+    private GameManager gm;
 
     [Header("Party Manager")]
     [SerializeField] private int maxPartySize;
@@ -26,18 +27,11 @@ public class TurnManager : MonoBehaviour
     [HideInInspector] public UnityEvent onPassTurn;
     [HideInInspector] public UnityEvent onBossKill;
 
-    public Bosses GetBoss(){ return boss; }
-    public List<Players> GetParty() { return party; }
     public GenericEntity GetActiveTurn(){ return active; }
+    public List<Players> GetParty() { return gm.GetParty(); }
+    public Bosses GetBoss(){ return gm.GetBoss(); }
 
     private void Awake() {
-        if(instance == null){
-            instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
-        else 
-            Destroy(this.gameObject);
-
         //Just for tests
         party = new List<Players>();
         AddToParty(fullParty[0]);
@@ -47,6 +41,7 @@ public class TurnManager : MonoBehaviour
     }
 
     private void Start() { 
+        gm = GameManager.instance;
         UnityEngine.Random.InitState((int) long.Parse(DateTime.Now.ToString("yyyyMMddHHmmss")));
         StartCombat(); 
     }
