@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfda5182d3b802dcc80e087b93016f2f, type: 3}
+  m_Name: Fada
+  m_EditorClassIdentifier: 
+  characterName: Fairy
+  maxHealth: 100
+  basicAttack: 5
+  art: {fileID: 775692243, guid: 25920d748a9565a4385afc52d846d689, type: 3}
+  animator: {fileID: 9100000, guid: 9c5d71c2e46f1a74dbf7cbd6fdf6cfea, type: 2}
+  nativeBiome: 4
+  bossDescription: "Criatura alada m\xE1gica da caverna, confunde suas v\xEDtimas
+    com truques"
+  bossCommentary: 

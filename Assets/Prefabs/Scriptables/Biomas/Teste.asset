@@ -15,6 +15,7 @@ MonoBehaviour:
   biome: 0
   biomeScene: 
   biomeDoor: {fileID: 0}
-  easyBosses: []
+  easyBosses:
+  - {fileID: 0}
   mediumBosses: []
   hardBosses: []
