@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Animations;
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,4 +10,10 @@ using UnityEngine.Events;
 public class Boss : Character
 {
     public Biome.Biomes nativeBiome;
+
+    [ResizableTextArea]
+    public string bossDescription;
+
+    [ResizableTextArea]
+    public string bossCommentary;
 }

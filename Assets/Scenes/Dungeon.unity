@@ -172,6 +172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 92911930}
   - component: {fileID: 92911929}
+  - component: {fileID: 92911931}
   m_Layer: 0
   m_Name: Monstro
   m_TagString: Untagged
@@ -246,6 +247,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 297954209}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &92911931
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92911928}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &167013112 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2996761309057410217, guid: 234ead64e59c389d6b8b010d858ec48a, type: 3}
@@ -390,10 +412,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60ba135da23c03c1c8266dc304c41107, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerArt: {fileID: 0}
-  bossArt: {fileID: 0}
-  playerAnimator: {fileID: 0}
-  bossAnimator: {fileID: 0}
+  playerArt: {fileID: 362474841}
+  bossArt: {fileID: 92911929}
+  playerAnimator: {fileID: 362474843}
+  bossAnimator: {fileID: 92911931}
 --- !u!1 &362474840
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,6 +426,7 @@ GameObject:
   m_Component:
   - component: {fileID: 362474842}
   - component: {fileID: 362474841}
+  - component: {fileID: 362474843}
   m_Layer: 0
   m_Name: Personagem
   m_TagString: Untagged
@@ -478,6 +501,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 297954209}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &362474843
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362474840}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &364401822
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,6 +532,7 @@ GameObject:
   m_Component:
   - component: {fileID: 364401824}
   - component: {fileID: 364401823}
+  - component: {fileID: 364401825}
   m_Layer: 0
   m_Name: PortaEsq
   m_TagString: Untagged
@@ -562,6 +607,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1216896411}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &364401825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364401822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5914684dc6db387eac419bc5d3b2931, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nEasy: 5
+  nMedium: 3
+  nHard: 2
 --- !u!1 &393800457
 GameObject:
   m_ObjectHideFlags: 0
@@ -1029,6 +1089,7 @@ GameObject:
   m_Component:
   - component: {fileID: 757998410}
   - component: {fileID: 757998409}
+  - component: {fileID: 757998411}
   m_Layer: 0
   m_Name: PortaDir
   m_TagString: Untagged
@@ -1103,6 +1164,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1216896411}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &757998411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757998408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5914684dc6db387eac419bc5d3b2931, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nEasy: 5
+  nMedium: 3
+  nHard: 2
 --- !u!114 &812227969 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5305714865653599999, guid: 234ead64e59c389d6b8b010d858ec48a, type: 3}
@@ -1356,12 +1432,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e21c527506ddd4dfab134318c0b887b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentBiome:
-    biome: 0
-    easyBosses: []
-    mediumBosses: []
-    hardBosses: []
-  possibleEncounters: []
+  possibleBiomes: []
+  currentBiome: {fileID: 0}
+  possibleEncounters:
+  - {fileID: 11400000, guid: 744230dccfe8dcbb1bf46e8dda9db6c1, type: 2}
+  - {fileID: 11400000, guid: b6776723807b9db239256c6017ed4b9b, type: 2}
+  - {fileID: 11400000, guid: 0a58456b727b00ef1815f46336a8da35, type: 2}
+  - {fileID: 11400000, guid: 603defaddab941faab268d2f738632e0, type: 2}
+  boss: {fileID: 0}
   currentBoss: {fileID: 0}
   _dungeon: {fileID: 297954208}
   _combat: {fileID: 1479803787}
@@ -1583,6 +1661,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1705385902}
   - component: {fileID: 1705385901}
+  - component: {fileID: 1705385903}
   m_Layer: 0
   m_Name: PortaMeio
   m_TagString: Untagged
@@ -1657,6 +1736,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1216896411}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1705385903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705385900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5914684dc6db387eac419bc5d3b2931, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nEasy: 5
+  nMedium: 3
+  nHard: 2
 --- !u!1 &1864164318
 GameObject:
   m_ObjectHideFlags: 0
