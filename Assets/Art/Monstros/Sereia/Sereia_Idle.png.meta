@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 24608c0b993c09047ab80b9bec3ac473
+guid: ba5568d6a5fe7b345a7c40b2dbf6c66c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Masqueico_Idle_0
+      name: sereia_gif-ezgif.com-gif-to-sprite-converter (1)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 658e2142cbffa8a4b9b4bddd15993e06
-      internalID: -688506180
+      spriteID: 5eb80a55a01011448b696b8c8fd221cb
+      internalID: -437793965
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Masqueico_Idle_1
+      name: sereia_gif-ezgif.com-gif-to-sprite-converter (1)_1
       rect:
         serializedVersion: 2
         x: 512
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 640b337521b3a4b49a98e8191cd72867
-      internalID: -759189056
+      spriteID: fe4c06408ef65f740a8cdb55817048df
+      internalID: 2039093435
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Masqueico_Idle_2
+      name: sereia_gif-ezgif.com-gif-to-sprite-converter (1)_2
       rect:
         serializedVersion: 2
         x: 1024
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: faee01e3e116ff546b57bca7a388cab5
-      internalID: 128410649
+      spriteID: fdb1962c8af6e6c4d88e319a6ed5cae2
+      internalID: -1917368468
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Masqueico_Idle_3
+      name: sereia_gif-ezgif.com-gif-to-sprite-converter (1)_3
       rect:
         serializedVersion: 2
         x: 1536
@@ -200,50 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e2b063f2c4af334bb0cdcc3de500345
-      internalID: -367987267
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Masqueico_Idle_4
-      rect:
-        serializedVersion: 2
-        x: 2048
-        y: 0
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 63620cf528051d145bbc894483e1f818
-      internalID: -2071247395
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Masqueico_Idle_5
-      rect:
-        serializedVersion: 2
-        x: 2560
-        y: 0
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b677540d22034ec43b98cb4c7fe983ea
-      internalID: -638701211
+      spriteID: 46c9acef45b81a044ac5d7ecebace727
+      internalID: -172301782
       vertices: []
       indices: 
       edges: []
@@ -259,12 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Masqueico_Idle_0: -688506180
-      Masqueico_Idle_1: -759189056
-      Masqueico_Idle_2: 128410649
-      Masqueico_Idle_3: -367987267
-      Masqueico_Idle_4: -2071247395
-      Masqueico_Idle_5: -638701211
+      sereia_gif-ezgif.com-gif-to-sprite-converter (1)_0: -437793965
+      sereia_gif-ezgif.com-gif-to-sprite-converter (1)_1: 2039093435
+      sereia_gif-ezgif.com-gif-to-sprite-converter (1)_2: -1917368468
+      sereia_gif-ezgif.com-gif-to-sprite-converter (1)_3: -172301782
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
