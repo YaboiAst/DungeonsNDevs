@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 24608c0b993c09047ab80b9bec3ac473
+guid: eef89b4e67ab6a94ab58cd4da89c5ad0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Masqueico_Idle_0
+      name: Mimico_Idle_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 512
-        height: 512
+        x: 88
+        y: 120
+        width: 336
+        height: 392
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 658e2142cbffa8a4b9b4bddd15993e06
-      internalID: -688506180
+      spriteID: 77c19bd85fea02d4fa4eb4db9d6fabed
+      internalID: -2057923988
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Masqueico_Idle_1
+      name: Mimico_Idle_1
       rect:
         serializedVersion: 2
-        x: 512
-        y: 0
-        width: 512
-        height: 512
+        x: 598
+        y: 120
+        width: 336
+        height: 392
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 640b337521b3a4b49a98e8191cd72867
-      internalID: -759189056
+      spriteID: 6a09bd2d927859a41897532f4f7e4769
+      internalID: -1303971802
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Masqueico_Idle_2
+      name: Mimico_Idle_2
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 512
-        height: 512
+        x: 1113
+        y: 120
+        width: 336
+        height: 392
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: faee01e3e116ff546b57bca7a388cab5
-      internalID: 128410649
+      spriteID: ff1781582ea247d42a0a3eb59f6d990d
+      internalID: -74080246
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Masqueico_Idle_3
+      name: Mimico_Idle_3
       rect:
         serializedVersion: 2
-        x: 1536
-        y: 0
-        width: 512
-        height: 512
+        x: 1600
+        y: 120
+        width: 336
+        height: 392
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,50 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e2b063f2c4af334bb0cdcc3de500345
-      internalID: -367987267
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Masqueico_Idle_4
-      rect:
-        serializedVersion: 2
-        x: 2048
-        y: 0
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 63620cf528051d145bbc894483e1f818
-      internalID: -2071247395
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Masqueico_Idle_5
-      rect:
-        serializedVersion: 2
-        x: 2560
-        y: 0
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b677540d22034ec43b98cb4c7fe983ea
-      internalID: -638701211
+      spriteID: c95e63e19214242498eeb4d3434e9803
+      internalID: 1285733980
       vertices: []
       indices: 
       edges: []
@@ -259,12 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Masqueico_Idle_0: -688506180
-      Masqueico_Idle_1: -759189056
-      Masqueico_Idle_2: 128410649
-      Masqueico_Idle_3: -367987267
-      Masqueico_Idle_4: -2071247395
-      Masqueico_Idle_5: -638701211
+      Mimico_Idle_0: -2057923988
+      Mimico_Idle_1: -1303971802
+      Mimico_Idle_2: -74080246
+      Mimico_Idle_3: 1285733980
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
