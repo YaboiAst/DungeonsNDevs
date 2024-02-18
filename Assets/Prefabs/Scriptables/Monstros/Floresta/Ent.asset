@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfda5182d3b802dcc80e087b93016f2f, type: 3}
+  m_Name: Ent
+  m_EditorClassIdentifier: 
+  characterName: Ent
+  maxHealth: 100
+  basicAttack: 5
+  art: {fileID: -1251132482, guid: 15da4be879230f34fb6a6dcb54e78776, type: 3}
+  animator: {fileID: 9100000, guid: eb3c680a85ae9744b97cb8c9e431df4f, type: 2}
+  nativeBiome: 1
+  bossDescription: "Consegue se disfar\xE7ar dentro da floresta e pegar suas v\xEDtimas
+    de surpresa"
+  bossCommentary: 
