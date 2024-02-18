@@ -3227,11 +3227,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196112539}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2961286a2c180754a99a660e4fd0cc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeInAndOutDuration: {x: 0.5, y: 0.5}
 --- !u!1 &1216896410
 GameObject:
   m_ObjectHideFlags: 0
@@ -4475,6 +4476,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3765626685316508531, guid: 24d5f54dd029f0aa69deed8670899ca1, type: 3}
+      propertyPath: fade
+      value: 
+      objectReference: {fileID: 1196112545}
     - target: {fileID: 3765626685316508531, guid: 24d5f54dd029f0aa69deed8670899ca1, type: 3}
       propertyPath: combatCam
       value: 
