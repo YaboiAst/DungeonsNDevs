@@ -13,14 +13,15 @@ public class FadeAnim : MonoBehaviour
     private Image fadeImage = null;
     [SerializeField] private Vector2 fadeInAndOutDuration = new(0.5f, 0.5f);
 
-    void Start(){
+    private void Awake() {
         if(instance == null){
             instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
         else Destroy(this.gameObject);
-        
+    }
 
+    void Start(){
         if(fadeImage == null){
             fadeImage = GetComponentInChildren<Image>(true);
         }
