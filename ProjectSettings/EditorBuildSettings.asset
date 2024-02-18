@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Combate.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 058a1758802d4614aab64007bcaaf553
+  - enabled: 1
+    path: Assets/Scenes/Dungeon.unity
+    guid: bc0be5895c34fc6419d8d1c60fdd9dcd
   m_configObjects: {}
