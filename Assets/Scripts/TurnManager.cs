@@ -50,7 +50,7 @@ public class TurnManager : MonoBehaviour
 
         turnAnim = GetComponentInChildren<TurnAnim>();
         actionsManager = GetComponentInChildren<ActionsManager>();
-        onBossKill.AddListener(() => gm.onStartCombat?.Invoke());
+        //onBossKill.AddListener(() => gm.onStartCombat?.Invoke());
     }
 
     public void SetupCombat(){

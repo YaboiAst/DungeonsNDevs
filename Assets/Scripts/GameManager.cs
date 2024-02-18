@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
     private bool isCameraInDungeon = true;
     public bool isBossDefeated = false;
 
+    [SerializeField] private FadeAnim fade;
+
     [HideInInspector] public UnityEvent onEnterRoom;
     [HideInInspector] public UnityEvent onStartCombat;
     [HideInInspector] public UnityEvent onReturnDungeon;
@@ -73,6 +75,10 @@ public class GameManager : MonoBehaviour
             onChangeRoom?.Invoke("Final");
             return;
         }
+
+        fade.enabled = true;
+
+        onReturnDungeon.AddListener(() => AddToListFrom(party, possibleEncounters));
         roomCounter++;
 
         DungeonManager.instance.SetupDungeon();

@@ -18,13 +18,15 @@ public class FadeAnim : MonoBehaviour
             fadeImage = GetComponentInChildren<Image>(true);
         }
 
+        FadeIn(SceneManager.GetActiveScene(), LoadSceneMode.Single);
+        SceneManager.sceneLoaded += FadeIn;
+    }
+
+    private void OnEnable() {
         if(gm == null){
             gm = GameManager.instance;
         }
         gm.onChangeRoom.AddListener(NextScene);
-
-        FadeIn(SceneManager.GetActiveScene(), LoadSceneMode.Single);
-        SceneManager.sceneLoaded += FadeIn;
     }
 
     public void FadeIn(Scene scene, LoadSceneMode mode){
