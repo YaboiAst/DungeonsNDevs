@@ -12,9 +12,13 @@ public class Players : GenericEntity
 
     [HideInInspector] public int specialCooldownCounter;
 
+    [HideInInspector] public UnityEvent onPlayerDeath;
+
     internal override void SetupCharacter(){
         base.SetupCharacter();
         boss = tm.GetBoss();
+
+        onPlayerDeath.AddListener(Die);
     }
 
     public void SetPlayerInfo(Player playerInfo){
@@ -28,6 +32,23 @@ public class Players : GenericEntity
     public override Boss GetBoss(){ return null; }
 
     public int GetThreatLevel(){ return playerInfo.threatLevel; }
+
+    public override void ChangeHealth(float amount){
+        base.ChangeHealth(amount);
+
+        if(currentHealth <= 0){
+            onPlayerDeath?.Invoke();
+        }
+    }
+
+    private void Die(){
+        tm.GetTurnOrder().Remove(this.gameObject);
+        GetComponentInChildren<SpriteRenderer>().color = Color.gray;
+
+        if(tm.GetTurnOrder().Count == 1){
+            gm.onChangeRoom?.Invoke("GameOver");
+        }
+    }
 
     public override void BasicAttack(){
         charAnimator.SetTrigger("Ataque");

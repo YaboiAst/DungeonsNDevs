@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Timeline;
 
 public class Bosses : GenericEntity
 {
@@ -31,6 +33,20 @@ public class Bosses : GenericEntity
     public override Character GetCharacter(){ return bossInfo; }
     public override Boss GetBoss(){ return bossInfo; }
     public override Player GetPlayer(){ return null; }
+
+    public override void ChangeHealth(float amount){
+        base.ChangeHealth(amount);
+
+        if(currentHealth <= 0){
+            Invoke("DefeatBoss", 1.5f);
+        }
+    }
+
+    private void DefeatBoss(){
+        tm.GetTurnOrder().Remove(this.gameObject);
+        gm.isBossDefeated = true;
+        tm.onBossKill?.Invoke();
+    }
 
     public void TakeAction(){
         target = gm.SelectFrom(decisionList, false);

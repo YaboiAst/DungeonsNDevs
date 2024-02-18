@@ -20,7 +20,6 @@ public class ActionsManager : MonoBehaviour
     private void Start() {
         tm = TurnManager.instance;
         tm.onPassTurn.AddListener(ActionAnim);
-        tm.disableCombat.AddListener(() => this.enabled = false);
 
         basicAttackButtonArt = basicAttackButton.GetComponent<Image>();
         specialAttackButtonArt = specialAttackButton.GetComponent<Image>();

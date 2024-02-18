@@ -52,7 +52,7 @@ public abstract class GenericEntity : MonoBehaviour
         onHealthChange?.Invoke(0);
     }
 
-    public void ChangeHealth(float amount){
+    public virtual void ChangeHealth(float amount){
         if(hasShield > 0){
             hasShield -= 1f;
             // Invoke em alguma animação?

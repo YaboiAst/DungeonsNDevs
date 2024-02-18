@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
+
+public class StringEvent : UnityEvent<string>{};
 
 public class GameManager : MonoBehaviour
 {
@@ -26,10 +29,12 @@ public class GameManager : MonoBehaviour
     [BoxGroup("Vision Management")]
     [SerializeField] private Transform dungeonCam, combatCam;
     private bool isCameraInDungeon = true;
+    public bool isBossDefeated = false;
 
     [HideInInspector] public UnityEvent onEnterRoom;
     [HideInInspector] public UnityEvent onStartCombat;
-    [HideInInspector] public UnityEvent onSelectDoor;
+    [HideInInspector] public UnityEvent onReturnDungeon;
+    [HideInInspector] public StringEvent onChangeRoom = new StringEvent();
 
     private void Awake() {
         if(instance == null){
@@ -41,6 +46,7 @@ public class GameManager : MonoBehaviour
 
         UnityEngine.Random.InitState((int) long.Parse(DateTime.Now.ToString("yyyyMMddHHmmss")));
         possibleBiomes = allBiomes;
+        isBossDefeated = false;
 
         if(party.Count == 0){
             party = new List<Player>();
@@ -66,6 +72,7 @@ public class GameManager : MonoBehaviour
         TurnManager.instance.enabled = false;
         DungeonManager.instance.enabled = true;
         Camera.main.transform.position = dungeonCam.localPosition;
+        onEnterRoom?.Invoke();
     }
 
     public void AddToListFrom<T>(List<T> listToAdd, List<T> refList, bool removeItem = true){
@@ -102,6 +109,12 @@ public class GameManager : MonoBehaviour
         }
         isCameraInDungeon = !isCameraInDungeon;
     }
+
+    public void NextRoom(string sceneName){
+        // Fade Anim here;
+        SceneManager.LoadScene(currentBiome.biomeScene);
+    }
+
 
     [Button]
     public void GoToCombat(){

@@ -18,7 +18,6 @@ public class TurnAnim : MonoBehaviour
     void Start()
     {
         tm = TurnManager.instance;
-        tm.disableCombat.AddListener(() => this.enabled = false);
         
         turnText = GetComponentInChildren<TextMeshProUGUI>();
     }
