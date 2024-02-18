@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Teste 1
   m_EditorClassIdentifier: 
   biome: 1
-  biomeScene: DungeonCity
+  biomeScene: DungeonCidade
   biomeDoor: {fileID: 21300000, guid: aa937632f3dab484e8a783bb2d570836, type: 3}
   easyBosses:
   - {fileID: 11400000, guid: 93546d8ee61a13441b011f03254089cd, type: 2}

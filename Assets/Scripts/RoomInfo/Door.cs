@@ -1,10 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Microsoft.Unity.VisualStudio.Editor;
-using Unity.VisualScripting;
+using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class Door : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Door : MonoBehaviour
     
     private Biome doorBiome;
     private Boss doorBoss;
+    private Canvas doorTip;
 
     [SerializeField] private int nEasy, nMedium, nHard;
 
@@ -27,6 +29,7 @@ public class Door : MonoBehaviour
         doorBiome = gm.SelectFrom(gm.possibleBiomes);
 
         GetComponent<SpriteRenderer>().sprite = doorBiome.biomeDoor;
+        doorTip = GetComponentInChildren<Canvas>();
     }
 
     public List<Boss> possibleBosses;
@@ -63,11 +66,42 @@ public class Door : MonoBehaviour
         }
 
         doorBoss = gm.SelectFrom(possibleBosses);
+        doorTip.GetComponentInChildren<TextMeshProUGUI>(true).text = doorBoss.bossDescription;
     }
 
     public void UpdateRoom(){
         gm.currentBiome = doorBiome;
         gm.currentBoss = doorBoss;
         gm.onChangeRoom?.Invoke(gm.currentBiome.biomeScene);
+    }
+
+    public void OpenTip(){
+        Image tooltipImage = doorTip.GetComponentInChildren<Image>(true);
+        TextMeshProUGUI[] tooltipText = doorTip.GetComponentsInChildren<TextMeshProUGUI>(true);
+
+        Sequence seq = DOTween.Sequence();
+        tooltipImage.transform.localScale = Vector3.zero;
+        seq.AppendCallback(() => tooltipImage.gameObject.SetActive(true));
+        seq.Append(tooltipImage.transform.DOScale(1f, 0.5f)
+        .SetEase(Ease.InSine)
+        .OnComplete(() => ActivateText(tooltipText, true)));
+    }
+
+    public void CloseTip(){
+        Image tooltipImage = doorTip.GetComponentInChildren<Image>(true);
+        TextMeshProUGUI[] tooltipText = doorTip.GetComponentsInChildren<TextMeshProUGUI>(true);
+
+        Sequence seq = DOTween.Sequence();
+        tooltipImage.transform.localScale = Vector3.one;
+        seq.AppendCallback(() => ActivateText(tooltipText, false));
+        seq.Append(tooltipImage.transform.DOScale(0f, 0.5f)
+        .SetEase(Ease.OutSine)
+        .OnComplete(() => tooltipImage.gameObject.SetActive(false)));
+    }
+
+    private void ActivateText(TextMeshProUGUI[] text, bool mode){
+        foreach(TextMeshProUGUI t in text){
+            t.gameObject.SetActive(mode);
+        }
     }
 }

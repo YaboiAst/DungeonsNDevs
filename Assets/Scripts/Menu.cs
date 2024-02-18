@@ -6,19 +6,23 @@ using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
 
-   public void jogar()
+   public void Jogar()
     {
         SceneManager.LoadScene("Dungeon");
     }
 
-    public void creditos()
+    public void Creditos()
     {
-        SceneManager.LoadScene("Dungeon");
+        SceneManager.LoadScene("Creditos");
     }
  
-    public void sair()
+    public void Sair()
     {
         Debug.Log("Saindo");
         Application.Quit();
+    }
+
+    public void VoltarAoMenu(){
+        SceneManager.LoadScene("Menu");
     }
 }

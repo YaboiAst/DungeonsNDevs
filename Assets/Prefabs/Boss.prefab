@@ -196,6 +196,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27819c94189a9c935913827b57b82462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterSet:
+    m_PersistentCalls:
+      m_Calls: []
   onShield:
     m_PersistentCalls:
       m_Calls: []
@@ -433,7 +436,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5871936234600533933
 RectTransform:
   m_ObjectHideFlags: 0
@@ -859,7 +862,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a770e8a1303a4e954b2288af838c837e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iconUI: {fileID: 8089001189355548539}
   nameUI: {fileID: 2914761756723680482}
   healthUI: {fileID: 4282680243679000405}
   healthIndicatorUI: {fileID: 5111053227951365605}

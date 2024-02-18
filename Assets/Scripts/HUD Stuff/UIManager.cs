@@ -11,7 +11,6 @@ public class UIManager : MonoBehaviour
     private Character cInfo;
 
     [Header("Visual")]
-    [SerializeField] private Image iconUI;
     [SerializeField] private TextMeshProUGUI nameUI;
     
     [SerializeField] private Image healthUI;
@@ -21,10 +20,6 @@ public class UIManager : MonoBehaviour
         entity = GetComponentInParent<GenericEntity>();
         cInfo = entity.GetCharacter();
         entity.onHealthChange.AddListener(UpdateUI);
-
-        if(entity.isPlayer()){
-            iconUI.sprite = entity.GetPlayer().classIcon;
-        }
         
         nameUI.text = cInfo.characterName;
     }

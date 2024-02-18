@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &514888452497711335
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4327156356173319476}
+  - component: {fileID: 3765626685316508531}
+  - component: {fileID: -5172360778690752563}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4327156356173319476
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514888452497711335}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3765626685316508531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514888452497711335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e21c527506ddd4dfab134318c0b887b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allBiomes:
+  - {fileID: 11400000, guid: d8a77e2e20be43f609d6496211144021, type: 2}
+  - {fileID: 11400000, guid: 0a63583f031fbd4c3ac527a675563eb1, type: 2}
+  - {fileID: 11400000, guid: 76504c4ac7244a8bb9618cb6ccbbdcc6, type: 2}
+  - {fileID: 11400000, guid: 6446d1f661941517aa6fdf76deb97c63, type: 2}
+  possibleBiomes:
+  - {fileID: 0}
+  currentBiome: {fileID: 0}
+  possibleEncounters:
+  - {fileID: 11400000, guid: 744230dccfe8dcbb1bf46e8dda9db6c1, type: 2}
+  - {fileID: 11400000, guid: b6776723807b9db239256c6017ed4b9b, type: 2}
+  - {fileID: 11400000, guid: 0a58456b727b00ef1815f46336a8da35, type: 2}
+  - {fileID: 11400000, guid: 603defaddab941faab268d2f738632e0, type: 2}
+  party: []
+  currentBoss: {fileID: 0}
+  dungeonCam: {fileID: 0}
+  combatCam: {fileID: 0}
+  isBossDefeated: 0
+  onEnterRoom:
+    m_PersistentCalls:
+      m_Calls: []
+  onStartCombat:
+    m_PersistentCalls:
+      m_Calls: []
+  onReturnDungeon:
+    m_PersistentCalls:
+      m_Calls: []
+  defaultBoss: {fileID: 11400000, guid: 93546d8ee61a13441b011f03254089cd, type: 2}
+  defaultBiome: {fileID: 11400000, guid: d8a77e2e20be43f609d6496211144021, type: 2}
+--- !u!114 &-5172360778690752563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514888452497711335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34e1221fb38670e7e848c10f3d229cb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundMap: []

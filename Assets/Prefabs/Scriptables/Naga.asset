@@ -17,7 +17,7 @@ MonoBehaviour:
   basicAttack: 5
   art: {fileID: 21300000, guid: c04e9ececde03f345a3e4809c0aecae9, type: 3}
   combatAnimator: {fileID: 9100000, guid: 68b06344d70e8554d9a66403a16ebd6a, type: 2}
-  walkingController: {fileID: 0}
+  walkingController: {fileID: 9100000, guid: 7e12021b576d9ff47b0a13d6c4713ec0, type: 2}
   classIcon: {fileID: 0}
   threatLevel: 2
   specialAttack: HealAll
