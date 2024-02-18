@@ -43,7 +43,7 @@ public class Bosses : GenericEntity
     }
 
     private void DefeatBoss(){
-        tm.GetTurnOrder().Remove(this.gameObject);
+        tm.GetTurnOrder().RemoveRange(0, tm.GetTurnOrder().Count);
         gm.isBossDefeated = true;
         tm.onBossKill?.Invoke();
     }

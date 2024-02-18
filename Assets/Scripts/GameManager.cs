@@ -11,6 +11,9 @@ public class StringEvent : UnityEvent<string>{};
 public class GameManager : MonoBehaviour
 {
     [HideInInspector] public static GameManager instance;
+    [Header("Rooms to visit")]
+    [SerializeField] private int maxRoomsToVisit;
+    [HideInInspector] public int roomCounter;
 
     [Header("Biome")]
     public List<Biome> allBiomes;
@@ -40,10 +43,11 @@ public class GameManager : MonoBehaviour
         if(instance == null){
             instance = this;
             DontDestroyOnLoad(this.gameObject);
+            roomCounter = 0;
         }
         else 
             Destroy(this.gameObject);
-
+        
         UnityEngine.Random.InitState((int) long.Parse(DateTime.Now.ToString("yyyyMMddHHmmss")));
         possibleBiomes = allBiomes;
         isBossDefeated = false;
@@ -65,8 +69,13 @@ public class GameManager : MonoBehaviour
     public Boss defaultBoss;
     public Biome defaultBiome;
     private void Start() {
-        DungeonManager.instance.SetupDungeon();
+        if(roomCounter == maxRoomsToVisit){
+            onChangeRoom?.Invoke("Final");
+            return;
+        }
+        roomCounter++;
 
+        DungeonManager.instance.SetupDungeon();
         TurnManager.instance.SetupCombat();
 
         TurnManager.instance.enabled = false;
@@ -112,7 +121,7 @@ public class GameManager : MonoBehaviour
 
     public void NextRoom(string sceneName){
         // Fade Anim here;
-        SceneManager.LoadScene(currentBiome.biomeScene);
+        SceneManager.LoadScene(sceneName);
     }
 
 

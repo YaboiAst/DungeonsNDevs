@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -46,6 +47,7 @@ public class Players : GenericEntity
         GetComponentInChildren<SpriteRenderer>().color = Color.gray;
 
         if(tm.GetTurnOrder().Count == 1){
+            tm.GetTurnOrder().RemoveAt(0);
             gm.onChangeRoom?.Invoke("GameOver");
         }
     }
