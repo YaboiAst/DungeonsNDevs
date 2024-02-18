@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -27,8 +28,12 @@ public class TurnManager : MonoBehaviour
     private int turn;
     [HideInInspector] public GenericEntity active;
 
+    // GAMBIARRA
+    [HideInInspector] public TurnAnim turnAnim;
+    [HideInInspector] public ActionsManager actionsManager;
+
     // EVENTOS ---------------------------------------------
-    [HideInInspector] public UnityEvent disableCombat;
+    [HideInInspector] public UnityEvent disableCombat, enableCombat;
     [HideInInspector] public UnityEvent onPassTurn;
     [HideInInspector] public UnityEvent onBossKill;
     [HideInInspector] public UnityEvent onPlayerDeath;
@@ -42,6 +47,9 @@ public class TurnManager : MonoBehaviour
             instance = this;
         }
         else return;
+
+        turnAnim = GetComponentInChildren<TurnAnim>();
+        actionsManager = GetComponentInChildren<ActionsManager>();
     }
 
     public void SetupCombat(){
@@ -56,21 +64,36 @@ public class TurnManager : MonoBehaviour
             player.SetPlayerInfo(gm.party[i]);
 
             party.Add(player);
+            Debug.Log(party.Count);
         }
 
+        Debug.Log(party.Count);
         boss.SetBossInfo(gm.currentBoss);
 
         List<GameObject> auxList = new List<GameObject>();
+        Debug.Log(party.Count);
         foreach(Players player in party){
+            Debug.Log(player.gameObject);
             auxList.Add(player.gameObject);
         }
+        Debug.Log(boss.gameObject);
         auxList.Add(boss.gameObject);
 
+        // Define turn order
         roundOrder = new List<GameObject>();
         int size = auxList.Count;
         for(int i = 0; i < size; i++){
             gm.AddToListFrom(roundOrder, auxList);
         }
+    }
+
+    private void OnEnable() {
+        if(gm == null){
+            return;
+        }
+            
+        turnAnim.enabled = true;
+        actionsManager.enabled = true;
 
         turn = -1;
         Next();

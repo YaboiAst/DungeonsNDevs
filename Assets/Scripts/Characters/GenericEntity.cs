@@ -35,10 +35,13 @@ public abstract class GenericEntity : MonoBehaviour
         return this;
     }
 
+    private void Awake() {
+        characterSet.AddListener(SetupCharacter);
+    }
+
     internal virtual void SetupCharacter(){
         gm = GameManager.instance;
         tm = TurnManager.instance;
-        characterSet.AddListener(SetupCharacter);
 
         cInfo = GetCharacter();
         GetComponentInChildren<SpriteRenderer>().sprite = cInfo.art;

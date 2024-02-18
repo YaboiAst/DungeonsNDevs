@@ -7,16 +7,17 @@ public class Bosses : GenericEntity
 {
     [SerializeField] private Boss bossInfo;
 
-    private List<Players> party;
     List<Players> decisionList;
     private Players target;
 
     internal override void SetupCharacter(){
         base.SetupCharacter();
-        party = tm.GetParty();
+        List<Players> party = new List<Players>();
+        party.AddRange(tm.GetParty());
+        int size = party.Count;
 
         decisionList = new List<Players>();
-        foreach(Players player in party){
+        for(int i = 0; i < size; i++){
             gm.AddToListFrom(decisionList, party);
         }
     }
@@ -32,7 +33,7 @@ public class Bosses : GenericEntity
     public override Player GetPlayer(){ return null; }
 
     public void TakeAction(){
-        target = gm.SelectFrom(decisionList);
+        target = gm.SelectFrom(decisionList, false);
 
         Invoke("BasicAttack", 2f);
     }

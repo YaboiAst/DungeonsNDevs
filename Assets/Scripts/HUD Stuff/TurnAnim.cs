@@ -21,6 +21,11 @@ public class TurnAnim : MonoBehaviour
         tm.disableCombat.AddListener(() => this.enabled = false);
         
         turnText = GetComponentInChildren<TextMeshProUGUI>();
+    }
+
+    private void OnEnable() {
+        if(tm == null)
+            return;
 
         seqTurn = DOTween.Sequence();
         seqTurn.AppendCallback(() => SetActiveName());

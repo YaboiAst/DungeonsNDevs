@@ -68,25 +68,22 @@ public class GameManager : MonoBehaviour
         Camera.main.transform.position = dungeonCam.localPosition;
     }
 
-    public void AddToListFrom<T>(List<T> listToAdd, List<T> refList){
-        if(refList == null){
-            Debug.Log("Lista inválida");
-            return;
-        }
-        if(refList.Count == 0){
-            Debug.Log("Lista vazia");
-        }
-
+    public void AddToListFrom<T>(List<T> listToAdd, List<T> refList, bool removeItem = true){
         int rand = UnityEngine.Random.Range(0, refList.Count);
 
         listToAdd.Add(refList[rand]);
-        refList.RemoveAt(rand);
+
+        if(removeItem){
+            refList.RemoveAt(rand);
+        }
     }
 
-    public T SelectFrom<T>(List<T> refList){
+    public T SelectFrom<T>(List<T> refList, bool removeItem = true){
         int rand = UnityEngine.Random.Range(0, refList.Count);
         var value = refList[rand];
-        refList.RemoveAt(rand);
+        if(removeItem){
+            refList.RemoveAt(rand);
+        }
 
         return value;
     }
