@@ -6,7 +6,12 @@ using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
 
-   public void Jogar()
+   public void Contexto()
+    {
+        SceneManager.LoadScene("Contexto");
+    }
+
+      public void Jogar()
     {
         SceneManager.LoadScene("Dungeon");
     }

@@ -13,12 +13,11 @@ MonoBehaviour:
   m_Name: Ast
   m_EditorClassIdentifier: 
   characterName: Ast
-  maxHealth: 30
-  basicAttack: 200
+  maxHealth: 43
+  basicAttack: 7
   art: {fileID: 21300000, guid: fc8d82277d50c6f46937bac874dd2217, type: 3}
   combatAnimator: {fileID: 9100000, guid: 050847933b34eb94ca4eb4146679c88b, type: 2}
   walkingController: {fileID: 9100000, guid: 1a4ad814fc51db5b98cd330ebb63d65a, type: 2}
-  classIcon: {fileID: 0}
   threatLevel: 2
   specialAttack: Stun
   specialParams:
@@ -26,7 +25,7 @@ MonoBehaviour:
   specialCooldown: 3
   basicAttackButton: {fileID: 21300000, guid: 8c389ae439db6bf4dbeea908b649bde0, type: 3}
   basicAttackName: 'DoDamage(x):'
-  basicAttackDescription: 
+  basicAttackDescription: 'Deal [7] damage '
   specialAttackButton: {fileID: 21300000, guid: 7759841395238f94ca88cfbc14f59d42, type: 3}
   specialAttackName: 'OnHit(Stun):'
-  specialAttackDescription: 
+  specialAttackDescription: The notebook glows, stunning the enemy.

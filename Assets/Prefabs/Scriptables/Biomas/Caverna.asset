@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fbecab2fd5bcdc874b9d61dc87a013f5, type: 3}
-  m_Name: Teste 2
+  m_Name: Caverna
   m_EditorClassIdentifier: 
-  biome: 2
-  biomeScene: DungeonCidade
-  biomeDoor: {fileID: 21300000, guid: aa937632f3dab484e8a783bb2d570836, type: 3}
+  biome: 4
+  biomeScene: DungeonCaverna
+  biomeDoor: {fileID: 21300000, guid: 71a5ec58922515d4abea41567931ecb8, type: 3}
   easyBosses:
-  - {fileID: 11400000, guid: 93546d8ee61a13441b011f03254089cd, type: 2}
-  - {fileID: 11400000, guid: 1efcd18a817fbc6da968ed74a5383c2e, type: 2}
-  mediumBosses: []
+  - {fileID: 11400000, guid: e6e8001c1d8649c48a738b22a807338e, type: 2}
+  - {fileID: 11400000, guid: 855d9db452c1e934586b27fda0ac7f18, type: 2}
+  mediumBosses:
+  - {fileID: 11400000, guid: 3f733445ca013ef44a6d653d5ee76c41, type: 2}
   hardBosses: []

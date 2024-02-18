@@ -13,11 +13,10 @@ MonoBehaviour:
   m_Name: Golem
   m_EditorClassIdentifier: 
   characterName: Golem
-  maxHealth: 100
-  basicAttack: 5
+  maxHealth: 55
+  basicAttack: 15
   art: {fileID: 1259286316, guid: e4723b771cfe71445adff33ea8ce896b, type: 3}
-  animator: {fileID: 9100000, guid: a4ade8d89eff5ae4ca75a36badaebc8c, type: 2}
+  combatAnimator: {fileID: 0}
   nativeBiome: 4
-  bossDescription: Uma montanha que caminha para esmagar seus oponentes
-  bossCommentary: "Aaaaah eu desenhei ele muito fofinho, fico com d\xF3 de matar
-    ele"
+  bossDescription: A walking mountain that crushes its opponents.
+  bossCommentary: 'Mary: Oh, I drew it so cute, I feel bad about killing it '

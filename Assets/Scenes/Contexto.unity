@@ -301,7 +301,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.0991, y: -408.0638}
+  m_AnchoredPosition: {x: 1.0991, y: -446}
   m_SizeDelta: {x: 402.1982, y: 240.1276}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &637502831
@@ -347,7 +347,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 637502832}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1440102631}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: Jogar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!114 &637502832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -668,22 +680,22 @@ MonoBehaviour:
     we created. Amazing, right? But there''s a catch: now we''re stuck here and we
     need to find a way back to the real world.
 
-    
 
-    And you know what''s
-    even crazier? We''re all scattered throughout the game. So, our goal is to gather
-    everyone, defeat monsters, and overcome challenges to find our way back. It''s
-    a true epic journey!
 
-    
+    And you know what''s even crazier?
+    We''re all scattered throughout the game. So, our goal is to gather everyone,
+    defeat monsters, and overcome challenges to find our way back. It''s a true epic
+    journey!
 
-    We''re talking about facing the monsters we
-    ourselves created and, of course, coming together as a team to overcome it all.
 
-    
 
-    It
-    sounds like an incredible adventure, doesn''t it?'
+    We''re talking about facing the monsters we ourselves created
+    and, of course, coming together as a team to overcome it all.
+
+
+
+    It sounds
+    like an incredible adventure, doesn''t it?'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -816,6 +828,7 @@ GameObject:
   - component: {fileID: 1440102629}
   - component: {fileID: 1440102628}
   - component: {fileID: 1440102627}
+  - component: {fileID: 1440102631}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -910,6 +923,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1440102631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440102626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 606214aebf34acc41bb947bb88bf4416, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1968661574
 GameObject:
   m_ObjectHideFlags: 0

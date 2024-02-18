@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Ent
   m_EditorClassIdentifier: 
   characterName: Ent
-  maxHealth: 100
-  basicAttack: 5
+  maxHealth: 25
+  basicAttack: 15
   art: {fileID: -1251132482, guid: 15da4be879230f34fb6a6dcb54e78776, type: 3}
-  animator: {fileID: 9100000, guid: eb3c680a85ae9744b97cb8c9e431df4f, type: 2}
+  combatAnimator: {fileID: 0}
   nativeBiome: 1
-  bossDescription: "Consegue se disfar\xE7ar dentro da floresta e pegar suas v\xEDtimas
-    de surpresa"
+  bossDescription: You can disguise yourself within the forest and catch your victims
+    by surprise.
   bossCommentary: 

@@ -4483,6 +4483,14 @@ PrefabInstance:
       propertyPath: defaultBoss
       value: 
       objectReference: {fileID: 11400000, guid: 93546d8ee61a13441b011f03254089cd, type: 2}
+    - target: {fileID: 3765626685316508531, guid: 24d5f54dd029f0aa69deed8670899ca1, type: 3}
+      propertyPath: allBiomes.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3765626685316508531, guid: 24d5f54dd029f0aa69deed8670899ca1, type: 3}
+      propertyPath: allBiomes.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9ec672721d4d3c14db94712d56c06003, type: 2}
     - target: {fileID: 4327156356173319476, guid: 24d5f54dd029f0aa69deed8670899ca1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

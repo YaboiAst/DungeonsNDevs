@@ -13,12 +13,11 @@ MonoBehaviour:
   m_Name: Mary
   m_EditorClassIdentifier: 
   characterName: Mary
-  maxHealth: 25
-  basicAttack: 6
+  maxHealth: 33
+  basicAttack: 9
   art: {fileID: 21300000, guid: daa4b0a768c791144959cb28b9ea3413, type: 3}
   combatAnimator: {fileID: 9100000, guid: 88725bd8ff227044a8becc6a8a4352c5, type: 2}
   walkingController: {fileID: 9100000, guid: 3833091cc1bee2434a04ea7f2d105084, type: 2}
-  classIcon: {fileID: 0}
   threatLevel: 1
   specialAttack: MultiAttacks
   specialParams:
@@ -26,7 +25,8 @@ MonoBehaviour:
   specialCooldown: 3
   basicAttackButton: {fileID: 21300000, guid: 1a499cc92f3d0564aae996fb49501862, type: 3}
   basicAttackName: 'Creative Arrow:'
-  basicAttackDescription: 
+  basicAttackDescription: Atira um pincel de seu arco e flecha. Deal [7] damage
   specialAttackButton: {fileID: 21300000, guid: f2bd71edeb10057489363677256d6252, type: 3}
   specialAttackName: 'Piercing Animation:'
-  specialAttackDescription: 
+  specialAttackDescription: Deals double damage with a single shot of the creative
+    arrow.

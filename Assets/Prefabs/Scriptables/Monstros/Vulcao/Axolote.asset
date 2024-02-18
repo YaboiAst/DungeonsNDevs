@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Axolote
   m_EditorClassIdentifier: 
   characterName: Axolote Mage
-  maxHealth: 100
-  basicAttack: 5
+  maxHealth: 25
+  basicAttack: 10
   art: {fileID: -2140555272, guid: 182c5bbbe43693f41a9b34c037f5e32c, type: 3}
-  animator: {fileID: 9100000, guid: ab4a917ae7e05e54c984eea0553b2d6e, type: 2}
+  combatAnimator: {fileID: 0}
   nativeBiome: 3
-  bossDescription: Uma criatura que aprendeu a magia profunda do mundo
-  bossCommentary: "Naga: Eu sei que esse monstro era pra estar na \xE1gua, errei
-    no game design"
+  bossDescription: A creature that has mastered the deep magic of the world.
+  bossCommentary: 'Naga: I know this monster was supposed to be in the water; I messed
+    up on the game design.'

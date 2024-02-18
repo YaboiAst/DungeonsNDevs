@@ -13,20 +13,20 @@ MonoBehaviour:
   m_Name: Naga
   m_EditorClassIdentifier: 
   characterName: Naga
-  maxHealth: 35
-  basicAttack: 200
+  maxHealth: 55
+  basicAttack: 5
   art: {fileID: 21300000, guid: c04e9ececde03f345a3e4809c0aecae9, type: 3}
   combatAnimator: {fileID: 9100000, guid: 68b06344d70e8554d9a66403a16ebd6a, type: 2}
   walkingController: {fileID: 9100000, guid: 7e12021b576d9ff47b0a13d6c4713ec0, type: 2}
-  classIcon: {fileID: 0}
   threatLevel: 2
   specialAttack: HealAll
   specialParams:
-  - 5
+  - 20
   specialCooldown: 2
   basicAttackButton: {fileID: 21300000, guid: c8dba42e604169a478202a789e101ef1, type: 3}
   basicAttackName: ' Command: Attack'
-  basicAttackDescription: 
+  basicAttackDescription: Lobs a particle of light at the enemy .Deal [5] damage
   specialAttackButton: {fileID: 21300000, guid: babe8f2fbde3fed4ab76b9b03fbc3caa, type: 3}
   specialAttackName: ' Command: Cure'
-  specialAttackDescription: 
+  specialAttackDescription: The crown glitches, and allies are healed by [20] hit
+    points.

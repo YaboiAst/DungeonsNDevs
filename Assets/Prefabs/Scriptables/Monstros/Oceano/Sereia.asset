@@ -13,11 +13,10 @@ MonoBehaviour:
   m_Name: Sereia
   m_EditorClassIdentifier: 
   characterName: Siren
-  maxHealth: 100
-  basicAttack: 5
+  maxHealth: 25
+  basicAttack: 10
   art: {fileID: -437793965, guid: ba5568d6a5fe7b345a7c40b2dbf6c66c, type: 3}
-  animator: {fileID: 9100000, guid: 81625fd6f0502a24880b32c9b703dc42, type: 2}
+  combatAnimator: {fileID: 0}
   nativeBiome: 2
-  bossDescription: "Habitante das profundezas, seu canto pode enfeiti\xE7ar suas
-    presas"
+  bossDescription: Deep-sea dweller, its song can enchant its prey.
   bossCommentary: 

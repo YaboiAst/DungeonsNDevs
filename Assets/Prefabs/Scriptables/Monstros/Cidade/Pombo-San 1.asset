@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Pombo-San 1
   m_EditorClassIdentifier: 
   characterName: Mr Dr Pigeon
-  maxHealth: 100
-  basicAttack: 20
+  maxHealth: 25
+  basicAttack: 10
   art: {fileID: 21300000, guid: 7eb1b3ad5fca55d4cb811e6ed1ef632a, type: 3}
   combatAnimator: {fileID: 0}
   nativeBiome: 0
-  bossDescription: Precisa de um advogado? Chame ele
-  bossCommentary: "Naga: Isso ficou MUITO engra\xE7ado, nosso jogo deveria ter mais
-    desses"
+  bossDescription: Do you need a lawyer? Call him.
+  bossCommentary: 'Naga: This turned out REALLY funny, our game should have more
+    of these.'

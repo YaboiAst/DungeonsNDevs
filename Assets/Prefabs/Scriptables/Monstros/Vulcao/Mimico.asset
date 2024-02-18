@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Mimico
   m_EditorClassIdentifier: 
   characterName: Fire Mimic
-  maxHealth: 100
-  basicAttack: 5
+  maxHealth: 50
+  basicAttack: 15
   art: {fileID: 1038009883, guid: 863595ac1c5728844b6ac85fd59a9373, type: 3}
-  animator: {fileID: 9100000, guid: 355f85dee003db54cabcf0a749db353e, type: 2}
+  combatAnimator: {fileID: 0}
   nativeBiome: 3
-  bossDescription: "Engana suas v\xEDtimas alterando sua apar\xEAncia e depois as
-    queimando"
+  bossDescription: It deceives its victims by altering its appearance and then burning
+    them within.
   bossCommentary: 

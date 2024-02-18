@@ -14,4 +14,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dungeon.unity
     guid: bc0be5895c34fc6419d8d1c60fdd9dcd
+  - enabled: 1
+    path: Assets/Scenes/Creditos.unity
+    guid: a68283fcd31d2b64d992282b1c7f4183
+  - enabled: 1
+    path: Assets/Scenes/DungeonCaverna.unity
+    guid: 5421a2afb7a529b4d9f08f8ebbd22444
+  - enabled: 1
+    path: Assets/Scenes/DungeonFloresta.unity
+    guid: ff9d254a5e643d045938765585eee438
+  - enabled: 1
+    path: Assets/Scenes/DungeonCidade.unity
+    guid: 7f48ad2103848e749852aaea93eb2b9a
+  - enabled: 1
+    path: Assets/Scenes/DungeonVulcao.unity
+    guid: f4991039072a2014a81208362d08982b
+  - enabled: 1
+    path: Assets/Scenes/DungeonOceano.unity
+    guid: f42b6ff211ea2c6479a93965b42bc845
+  - enabled: 1
+    path: Assets/Scenes/Contexto.unity
+    guid: 4f3ad2ee8a267fd459144b04a338e900
   m_configObjects: {}

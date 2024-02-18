@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: "Ladr\xE3o"
   m_EditorClassIdentifier: 
   characterName: Burglar
-  maxHealth: 100
-  basicAttack: 5
+  maxHealth: 25
+  basicAttack: 10
   art: {fileID: -1425677534, guid: f310110e9cac87346a9a4afacb5c162d, type: 3}
-  animator: {fileID: 9100000, guid: 00f17c9bf8a1e3f419a661197a772dfe, type: 2}
+  combatAnimator: {fileID: 0}
   nativeBiome: 0
-  bossDescription: PASSA A GRANA, O CELULAR E FICA DE BOA!
-  bossCommentary: "Mary: Eu ADOREI a anima\xE7\xE3o dele, tanto que nem fiz mais
-    frames"
+  bossDescription: Give me the cash, the phone, and you'll be fine!
+  bossCommentary: 'Mary: I LOVED the animation of it, so I didn''t even make any
+    more frames.'

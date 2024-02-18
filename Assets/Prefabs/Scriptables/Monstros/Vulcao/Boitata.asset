@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Boitata
   m_EditorClassIdentifier: 
   characterName: Boitata
-  maxHealth: 100
-  basicAttack: 5
+  maxHealth: 25
+  basicAttack: 10
   art: {fileID: -2140555272, guid: 182c5bbbe43693f41a9b34c037f5e32c, type: 3}
-  animator: {fileID: 9100000, guid: ab4a917ae7e05e54c984eea0553b2d6e, type: 2}
+  combatAnimator: {fileID: 0}
   nativeBiome: 3
   bossDescription: "Cobra mitol\xF3gica brasileira"
   bossCommentary: "Ast: Foi preciso muito caf\xE9 pra balancear esse daqui"

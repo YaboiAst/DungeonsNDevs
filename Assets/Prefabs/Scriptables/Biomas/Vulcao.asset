@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fbecab2fd5bcdc874b9d61dc87a013f5, type: 3}
-  m_Name: Teste 3
+  m_Name: Vulcao
   m_EditorClassIdentifier: 
   biome: 3
-  biomeScene: DungeonCidade
-  biomeDoor: {fileID: 21300000, guid: aa937632f3dab484e8a783bb2d570836, type: 3}
+  biomeScene: DungeonVulcao
+  biomeDoor: {fileID: 21300000, guid: 1fbb6e6bd75d56545bbc760041733f44, type: 3}
   easyBosses:
-  - {fileID: 11400000, guid: 93546d8ee61a13441b011f03254089cd, type: 2}
-  - {fileID: 11400000, guid: 1efcd18a817fbc6da968ed74a5383c2e, type: 2}
-  mediumBosses: []
+  - {fileID: 11400000, guid: 7ea9794ff99ea714b8434f57de2be6e6, type: 2}
+  - {fileID: 11400000, guid: b1867550c67b3f2409c8ad4e46a9d549, type: 2}
+  mediumBosses:
+  - {fileID: 11400000, guid: c9fcf02ce923c8c48aa8c77ce3ffcfed, type: 2}
   hardBosses: []

@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Fada
   m_EditorClassIdentifier: 
   characterName: Fairy
-  maxHealth: 100
-  basicAttack: 5
+  maxHealth: 25
+  basicAttack: 10
   art: {fileID: 775692243, guid: 25920d748a9565a4385afc52d846d689, type: 3}
-  animator: {fileID: 9100000, guid: 9c5d71c2e46f1a74dbf7cbd6fdf6cfea, type: 2}
+  combatAnimator: {fileID: 0}
   nativeBiome: 4
-  bossDescription: "Criatura alada m\xE1gica da caverna, confunde suas v\xEDtimas
-    com truques"
+  bossDescription: Magical winged creature from the cave, confuses its victims with
+    tricks.
   bossCommentary: 

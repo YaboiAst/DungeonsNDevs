@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Wendigo
   m_EditorClassIdentifier: 
   characterName: Burglar
-  maxHealth: 100
-  basicAttack: 5
+  maxHealth: 25
+  basicAttack: 14
   art: {fileID: 21300000, guid: 960caf0f0e8f56c41b25e8c794e6232c, type: 3}
-  animator: {fileID: 0}
+  combatAnimator: {fileID: 0}
   nativeBiome: 1
-  bossDescription: Criatura da floresta profunda com chifres e flores
-  bossCommentary: "Manga: Eu lembro desse! N\xE3o deu tempo de animar ele "
+  bossDescription: Creature of the deep forest with horns and flowers
+  bossCommentary: 'Manga: I remember this one! There wasn''t enough time to animate
+    it.'
