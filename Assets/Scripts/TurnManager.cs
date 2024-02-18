@@ -33,14 +33,14 @@ public class TurnManager : MonoBehaviour
     [HideInInspector] public ActionsManager actionsManager;
 
     // EVENTOS ---------------------------------------------
-    [HideInInspector] public UnityEvent disableCombat, enableCombat;
     [HideInInspector] public UnityEvent onPassTurn;
     [HideInInspector] public UnityEvent onBossKill;
-    [HideInInspector] public UnityEvent onPlayerDeath;
 
     public GenericEntity GetActiveTurn(){ return active; }
     public List<Players> GetParty() { return party; }
     public Bosses GetBoss(){ return boss; }
+
+    public List<GameObject> GetTurnOrder() { return roundOrder; }
 
     private void Awake() {
         if(instance == null){
@@ -50,6 +50,7 @@ public class TurnManager : MonoBehaviour
 
         turnAnim = GetComponentInChildren<TurnAnim>();
         actionsManager = GetComponentInChildren<ActionsManager>();
+        onBossKill.AddListener(() => gm.onStartCombat?.Invoke());
     }
 
     public void SetupCombat(){
@@ -64,19 +65,14 @@ public class TurnManager : MonoBehaviour
             player.SetPlayerInfo(gm.party[i]);
 
             party.Add(player);
-            Debug.Log(party.Count);
         }
 
-        Debug.Log(party.Count);
         boss.SetBossInfo(gm.currentBoss);
 
         List<GameObject> auxList = new List<GameObject>();
-        Debug.Log(party.Count);
         foreach(Players player in party){
-            Debug.Log(player.gameObject);
             auxList.Add(player.gameObject);
         }
-        Debug.Log(boss.gameObject);
         auxList.Add(boss.gameObject);
 
         // Define turn order
@@ -122,7 +118,8 @@ public class TurnManager : MonoBehaviour
     }
 
     private void OnDisable() {
-        disableCombat?.Invoke();
+        turnAnim.enabled = false;
+        actionsManager.enabled = false;
     }
 
     [ContextMenu("NextTurn")] public void DoNext(){

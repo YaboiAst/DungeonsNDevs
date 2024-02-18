@@ -10,9 +10,10 @@ public class FadeAnim : MonoBehaviour
     private GameManager gm = null;
     private Image fadeImage = null;
     [SerializeField] private Vector2 fadeInAndOutDuration = new(0.5f, 0.5f);
-    [SerializeField] private float intervalDuration = 0.5f;
 
     void Start(){
+        DontDestroyOnLoad(this.gameObject);
+
         if(fadeImage == null){
             fadeImage = GetComponentInChildren<Image>(true);
         }
@@ -20,24 +21,26 @@ public class FadeAnim : MonoBehaviour
         if(gm == null){
             gm = GameManager.instance;
         }
+        gm.onChangeRoom.AddListener(NextScene);
 
-        fadeImage.gameObject.SetActive(false);
-        gm.onStartCombat.AddListener(GoToCombat);
+        FadeIn(SceneManager.GetActiveScene(), LoadSceneMode.Single);
+        SceneManager.sceneLoaded += FadeIn;
     }
 
-    public void GoToCombat(){
-        Sequence seq = DOTween.Sequence();
+    public void FadeIn(Scene scene, LoadSceneMode mode){
         fadeImage.gameObject.SetActive(true);
-        fadeImage.fillAmount = 0f;
         fadeImage.color = Color.black;
-        seq.Append(fadeImage.DOFillAmount(1f, fadeInAndOutDuration.x)
-            .SetEase(Ease.OutSine)
-            .OnComplete(() => gm.SwitchVisions()));
+        fadeImage.DOFade(0f, fadeInAndOutDuration.x).SetEase(Ease.InSine).OnComplete(() => fadeImage.gameObject.SetActive(false));
+    }
 
-        seq.AppendInterval(intervalDuration);
-        
-        seq.Append(fadeImage.DOFillAmount(0f, fadeInAndOutDuration.x)
-            .SetEase(Ease.InSine)
-            .OnComplete(() => fadeImage.gameObject.SetActive(false)));
+    public void NextScene(string nextScene){
+        if(nextScene == "GameOver"){
+            fadeInAndOutDuration.y *= 2;
+        }
+
+        fadeImage.color = Color.black - Color.black;
+        fadeImage.gameObject.SetActive(true);
+        fadeImage.DOFade(1f, fadeInAndOutDuration.y).SetEase(Ease.OutSine).OnComplete(() => gm.NextRoom(nextScene));
     }
 }
+

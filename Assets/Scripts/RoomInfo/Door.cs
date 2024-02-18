@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Microsoft.Unity.VisualStudio.Editor;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Door : MonoBehaviour
 {
@@ -13,14 +15,14 @@ public class Door : MonoBehaviour
 
     [SerializeField] private int nEasy, nMedium, nHard;
 
-    private void Start() {
+    [HideInInspector] public UnityEvent onSelectDoor;
+
+    public void SetupBiome(){
         if(gm == null){
             gm = GameManager.instance;
         }
-        gm.onSelectDoor.AddListener(SetBoss);
-    }
+        onSelectDoor.AddListener(UpdateRoom);
 
-    public void SetupBiome(){
         gm.possibleBiomes.Remove(gm.currentBiome);
         doorBiome = gm.SelectFrom(gm.possibleBiomes);
 
@@ -63,7 +65,9 @@ public class Door : MonoBehaviour
         doorBoss = gm.SelectFrom(possibleBosses);
     }
 
-    public void SetBoss(){
+    public void UpdateRoom(){
+        gm.currentBiome = doorBiome;
         gm.currentBoss = doorBoss;
+        gm.onChangeRoom?.Invoke(gm.currentBiome.biomeScene);
     }
 }
