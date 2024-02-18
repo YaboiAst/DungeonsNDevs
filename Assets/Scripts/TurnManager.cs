@@ -96,6 +96,10 @@ public class TurnManager : MonoBehaviour
     }
 
     public void Next(){
+        if(roundOrder.Count == 0){
+            return;
+        }
+
         turn++;
         if(turn >= roundOrder.Count)
             turn = 0; 

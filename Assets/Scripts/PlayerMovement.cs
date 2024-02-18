@@ -75,6 +75,7 @@ public class PlayerMovement : MonoBehaviour
                 gm.onStartCombat?.Invoke();
             }
             else if(canInteractDoor && interactableDoor != null && gm.isBossDefeated){
+                Debug.Log("Selecting door...");
                 interactableDoor.onSelectDoor?.Invoke();
             }
         }

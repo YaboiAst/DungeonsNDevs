@@ -76,7 +76,8 @@ public class Door : MonoBehaviour
         gm.currentBiome = doorBiome;
         gm.currentBoss = doorBoss;
         Debug.Log(gm.currentBiome.biomeScene);
-        gm.onChangeRoom?.Invoke(gm.currentBiome.biomeScene);
+        gm.NextRoom(gm.currentBiome.biomeScene);
+        //gm.onChangeRoom?.Invoke(gm.currentBiome.biomeScene);
     }
 
     public void OpenTip(){

@@ -1691,7 +1691,6 @@ MonoBehaviour:
   onSelectDoor:
     m_PersistentCalls:
       m_Calls: []
-  possibleBosses: []
 --- !u!61 &364401826
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2599,7 +2598,6 @@ MonoBehaviour:
   onSelectDoor:
     m_PersistentCalls:
       m_Calls: []
-  possibleBosses: []
 --- !u!61 &757998412
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3234,7 +3232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2961286a2c180754a99a660e4fd0cc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeInAndOutDuration: {x: 0.5, y: 0.5}
 --- !u!1 &1216896410
 GameObject:
   m_ObjectHideFlags: 0
@@ -3791,7 +3788,6 @@ MonoBehaviour:
   onSelectDoor:
     m_PersistentCalls:
       m_Calls: []
-  possibleBosses: []
 --- !u!61 &1705385904
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4181,6 +4177,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 4.04
       objectReference: {fileID: 0}
+    - target: {fileID: 4333884044806319162, guid: 234ead64e59c389d6b8b010d858ec48a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838623093429054831, guid: 234ead64e59c389d6b8b010d858ec48a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5427931936444859100, guid: 234ead64e59c389d6b8b010d858ec48a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 2.5
@@ -4483,6 +4487,10 @@ PrefabInstance:
       propertyPath: defaultBoss
       value: 
       objectReference: {fileID: 11400000, guid: 93546d8ee61a13441b011f03254089cd, type: 2}
+    - target: {fileID: 3765626685316508531, guid: 24d5f54dd029f0aa69deed8670899ca1, type: 3}
+      propertyPath: maxRoomsToVisit
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3765626685316508531, guid: 24d5f54dd029f0aa69deed8670899ca1, type: 3}
       propertyPath: allBiomes.Array.size
       value: 5

@@ -34,6 +34,7 @@ public class FadeAnim : MonoBehaviour
     }
 
     public void NextScene(string nextScene){
+        Debug.Log("Chegou no NextScene");
         if(nextScene == "GameOver"){
             fadeInAndOutDuration.y *= 2;
         }

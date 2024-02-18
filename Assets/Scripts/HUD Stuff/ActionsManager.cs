@@ -25,6 +25,14 @@ public class ActionsManager : MonoBehaviour
         specialAttackButtonArt = specialAttackButton.GetComponent<Image>();
     }
 
+    private void OnEnable() {
+        if(tm == null){
+            tm = TurnManager.instance;
+        }
+        tm.onPassTurn.AddListener(ActionAnim);
+        //ActionAnim();
+    }
+
     public void BasicAttackButton(){
         tm.active.BasicAttack();
     }
