@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfda5182d3b802dcc80e087b93016f2f, type: 3}
   m_Name: Pombo-San 1
   m_EditorClassIdentifier: 
-  characterName: Mr Dr Pidgeon
+  characterName: Mr Dr Pigeon
   maxHealth: 100
   basicAttack: 20
   art: {fileID: 21300000, guid: 7eb1b3ad5fca55d4cb811e6ed1ef632a, type: 3}

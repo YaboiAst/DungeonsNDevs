@@ -10,7 +10,6 @@ using UnityEngine.Events;
 public class Player : Character
 {
     public AnimatorController walkingController;
-    public Sprite classIcon;
     public int threatLevel;
 
     [Space(10)]

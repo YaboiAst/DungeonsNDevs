@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Teste
   m_EditorClassIdentifier: 
   biome: 0
-  biomeScene: 
+  biomeScene: DungeonCidade
   biomeDoor: {fileID: 0}
   easyBosses:
   - {fileID: 0}
