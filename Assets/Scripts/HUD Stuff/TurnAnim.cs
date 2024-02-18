@@ -15,17 +15,12 @@ public class TurnAnim : MonoBehaviour
     public float animationDuration = 1f;
     public float idleDuration = 0.5f;
 
-    void Start()
-    {
-        tm = TurnManager.instance;
+    private void OnEnable() {
+        if(tm == null){
+            tm = TurnManager.instance;
+        }
         
         turnText = GetComponentInChildren<TextMeshProUGUI>();
-    }
-
-    private void OnEnable() {
-        if(tm == null)
-            return;
-
         seqTurn = DOTween.Sequence();
         seqTurn.AppendCallback(() => SetActiveName());
         seqTurn.Append(transform.DOMoveY(transform.position.y + offset, animationDuration)

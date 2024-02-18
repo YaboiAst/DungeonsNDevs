@@ -25,6 +25,10 @@ public class Door : MonoBehaviour
         }
         onSelectDoor.AddListener(UpdateRoom);
 
+        nEasy = (int) Mathf.Floor(1 + 3/gm.roomCounter);
+        nMedium = gm.roomCounter;
+        nHard = (int) Mathf.Floor(0.25f * gm.roomCounter);
+
         gm.possibleBiomes.Remove(gm.currentBiome);
         doorBiome = gm.SelectFrom(gm.possibleBiomes);
 
@@ -32,7 +36,6 @@ public class Door : MonoBehaviour
         doorTip = GetComponentInChildren<Canvas>();
     }
 
-    public List<Boss> possibleBosses;
     public void SetupBoss(){
         List<Boss> easyBosses = new List<Boss>();
         easyBosses.AddRange(doorBiome.easyBosses);
@@ -41,7 +44,7 @@ public class Door : MonoBehaviour
         List<Boss> hardBosses = new List<Boss>();
         hardBosses.AddRange(doorBiome.hardBosses);
 
-        possibleBosses = new List<Boss>();
+        List<Boss> possibleBosses = new List<Boss>();
         int i;
 
         if(nEasy > doorBiome.easyBosses.Count)
@@ -72,6 +75,7 @@ public class Door : MonoBehaviour
     public void UpdateRoom(){
         gm.currentBiome = doorBiome;
         gm.currentBoss = doorBoss;
+        Debug.Log(gm.currentBiome.biomeScene);
         gm.onChangeRoom?.Invoke(gm.currentBiome.biomeScene);
     }
 
