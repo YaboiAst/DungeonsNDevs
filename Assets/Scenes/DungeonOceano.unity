@@ -5057,7 +5057,7 @@ PrefabInstance:
     - target: {fileID: 3765626685316508531, guid: 24d5f54dd029f0aa69deed8670899ca1, type: 3}
       propertyPath: fade
       value: 
-      objectReference: {fileID: 2105454011}
+      objectReference: {fileID: 0}
     - target: {fileID: 3765626685316508531, guid: 24d5f54dd029f0aa69deed8670899ca1, type: 3}
       propertyPath: combatCam
       value: 
@@ -6029,7 +6029,6 @@ GameObject:
   - component: {fileID: 2105454014}
   - component: {fileID: 2105454013}
   - component: {fileID: 2105454012}
-  - component: {fileID: 2105454011}
   m_Layer: 5
   m_Name: Fade
   m_TagString: Untagged
@@ -6037,19 +6036,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2105454011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2105454010}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2961286a2c180754a99a660e4fd0cc8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeInAndOutDuration: {x: 0.5, y: 0.5}
 --- !u!114 &2105454012
 MonoBehaviour:
   m_ObjectHideFlags: 0
