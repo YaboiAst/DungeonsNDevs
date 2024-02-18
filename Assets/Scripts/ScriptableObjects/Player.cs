@@ -9,6 +9,7 @@ using UnityEngine.Events;
 [CreateAssetMenu(fileName = "New Character", menuName = "Character/Player")]
 public class Player : Character
 {
+    public AnimatorController walkingController;
     public Sprite classIcon;
     public int threatLevel;
 

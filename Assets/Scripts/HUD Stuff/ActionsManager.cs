@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ActionsManager : MonoBehaviour
 {
-    TurnManager gm;
+    TurnManager tm;
 
     [SerializeField] private Transform actionsTransform;
     [SerializeField] private Button basicAttackButton, specialAttackButton;
@@ -18,19 +18,20 @@ public class ActionsManager : MonoBehaviour
     public float idleDuration = 0.5f;
 
     private void Start() {
-        gm = TurnManager.instance;
-        gm.onPassTurn.AddListener(ActionAnim);
+        tm = TurnManager.instance;
+        tm.onPassTurn.AddListener(ActionAnim);
+        tm.disableCombat.AddListener(() => this.enabled = false);
 
         basicAttackButtonArt = basicAttackButton.GetComponent<Image>();
         specialAttackButtonArt = specialAttackButton.GetComponent<Image>();
     }
 
     public void BasicAttackButton(){
-        gm.active.BasicAttack();
+        tm.active.BasicAttack();
     }
 
     public void SpecialAttackButton(){
-        Players active = (Players) gm.active;
+        Players active = (Players) tm.active;
         active.SpecialAttack();
     }
 
@@ -42,13 +43,13 @@ public class ActionsManager : MonoBehaviour
         
         seqAction.Append(actionsTransform.DOMoveY(actionsTransform.position.y - offset, animationDuration)
         .SetEase(Ease.OutQuad))
-        .OnComplete(() => gm.Next());
+        .OnComplete(() => tm.Next());
     }
 
     public void ActionAnim(){
         seqAction = DOTween.Sequence();
 
-        if(gm.active.isPlayer()){
+        if(tm.active.isPlayer()){
             seqAction.AppendCallback(() => SetButtonImage());
             seqAction.AppendInterval(idleDuration);
             seqAction.Append(actionsTransform.DOMoveY(actionsTransform.position.y + offset, animationDuration)
@@ -58,19 +59,19 @@ public class ActionsManager : MonoBehaviour
     }
 
     private void SetButtonImage(){
-        if(!gm.active.isPlayer())
+        if(!tm.active.isPlayer())
             return;
 
-        basicAttackButtonArt.sprite = gm.active.GetPlayer().basicAttackButton;
-        specialAttackButtonArt.sprite = gm.active.GetPlayer().specialAttackButton;
+        basicAttackButtonArt.sprite = tm.active.GetPlayer().basicAttackButton;
+        specialAttackButtonArt.sprite = tm.active.GetPlayer().specialAttackButton;
     }
 
     private void SetButtons(bool mode){
-        if(!gm.active.isPlayer())
+        if(!tm.active.isPlayer())
             return;
         
         basicAttackButton.interactable = mode;
-        if(gm.active.GetComponent<Players>().specialCooldownCounter > 0){
+        if(tm.active.GetComponent<Players>().specialCooldownCounter > 0){
             specialAttackButton.interactable = false;
         }
         else{
