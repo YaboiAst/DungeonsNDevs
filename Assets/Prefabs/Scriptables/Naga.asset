@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Naga
   maxHealth: 35
-  basicAttack: 5
+  basicAttack: 200
   art: {fileID: 21300000, guid: c04e9ececde03f345a3e4809c0aecae9, type: 3}
   combatAnimator: {fileID: 9100000, guid: 68b06344d70e8554d9a66403a16ebd6a, type: 2}
   walkingController: {fileID: 0}
