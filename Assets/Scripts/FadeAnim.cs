@@ -7,12 +7,19 @@ using UnityEngine.UI;
 
 public class FadeAnim : MonoBehaviour
 {
+    [HideInInspector] public static FadeAnim instance;
+
     private GameManager gm = null;
     private Image fadeImage = null;
     [SerializeField] private Vector2 fadeInAndOutDuration = new(0.5f, 0.5f);
 
     void Start(){
-        DontDestroyOnLoad(this.gameObject);
+        if(instance == null){
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else Destroy(this.gameObject);
+        
 
         if(fadeImage == null){
             fadeImage = GetComponentInChildren<Image>(true);
