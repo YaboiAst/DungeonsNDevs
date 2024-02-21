@@ -24,7 +24,7 @@ public class EffectManager : MonoBehaviour
     [SerializeField] private GameObject stunEffect;
 
     private void Start() {
-        parent = GetComponentInParent<GenericEntity>();
+        parent = transform.parent.GetComponentInParent<GenericEntity>();
         gm = TurnManager.instance;
 
         parent.onHealthChange.AddListener(ChangeHealthEffect);

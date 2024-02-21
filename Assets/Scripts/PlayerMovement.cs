@@ -41,11 +41,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update() {
         GetInput();
+
+        // ANIMATION --------------------
         if(input.x < 0 && !isFacingRight){
             isFacingRight = false;
             spriteRenderer.flipX = true;
         }
-
         if(input.x > 0 && !isFacingRight){
             isFacingRight = true;
             spriteRenderer.flipX = false;
@@ -70,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
                 
         }
 
+        // INTERACTIONS --------------------
         if(Input.GetKeyDown(KeyCode.E)){
             if(canInteractMonster && !gm.isBossDefeated){
                 gm.onStartCombat?.Invoke();

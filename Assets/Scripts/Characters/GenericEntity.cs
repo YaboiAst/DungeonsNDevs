@@ -10,6 +10,8 @@ public abstract class GenericEntity : MonoBehaviour
     internal Character cInfo;
     internal TurnManager tm;
     internal GameManager gm;
+
+    internal SpriteRenderer charRenderer;
     internal Animator charAnimator;
 
     internal float currentHealth;
@@ -31,9 +33,7 @@ public abstract class GenericEntity : MonoBehaviour
     public abstract Player GetPlayer();
     public abstract Boss GetBoss();
 
-    public GenericEntity GetGenericEntity(){
-        return this;
-    }
+    public GenericEntity GetGenericEntity(){ return this; }
 
     private void Awake() {
         characterSet.AddListener(SetupCharacter);
@@ -44,7 +44,8 @@ public abstract class GenericEntity : MonoBehaviour
         tm = TurnManager.instance;
 
         cInfo = GetCharacter();
-        GetComponentInChildren<SpriteRenderer>().sprite = cInfo.art;
+        charRenderer = GetComponentInChildren<SpriteRenderer>();
+        charRenderer.sprite = cInfo.art;
         charAnimator = GetComponentInChildren<Animator>();
         charAnimator.runtimeAnimatorController = cInfo.combatAnimator;
 
@@ -55,7 +56,7 @@ public abstract class GenericEntity : MonoBehaviour
     public virtual void ChangeHealth(float amount){
         if(hasShield > 0){
             hasShield -= 1f;
-            // Invoke em alguma animação?
+            // TODO onBreakShield Evetn here
             return;
         }
 

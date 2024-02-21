@@ -5,15 +5,21 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Timeline;
 
-public class Bosses : GenericEntity
+public class Monsters : GenericEntity
 {
     [SerializeField] private Boss bossInfo;
 
-    List<Players> decisionList;
+    private List<Players> decisionList;
     private Players target;
+
+    public void SetMonsterInfo(Boss bossInfo){
+        this.bossInfo = bossInfo;
+        characterSet?.Invoke();
+    }
 
     internal override void SetupCharacter(){
         base.SetupCharacter();
+
         List<Players> party = new List<Players>();
         party.AddRange(tm.GetParty());
         int size = party.Count;
@@ -22,11 +28,6 @@ public class Bosses : GenericEntity
         for(int i = 0; i < size; i++){
             gm.AddToListFrom(decisionList, party);
         }
-    }
-
-    public void SetBossInfo(Boss bossInfo){
-        this.bossInfo = bossInfo;
-        characterSet?.Invoke();
     }
 
     public override bool isPlayer() { return false; }
@@ -57,6 +58,6 @@ public class Bosses : GenericEntity
 
     public override void BasicAttack(){
         target.ChangeHealth(-bossInfo.basicAttack);
-        tm.Next();
+        tm.GetActionsManager().NextTurnMonsterUpdate();
     }
 }

@@ -8,37 +8,35 @@ using UnityEngine.Events;
 public class TurnManager : MonoBehaviour
 {
     [HideInInspector] public static TurnManager instance;
+
     private GameManager gm;
 
     [Header("Scene Settings")]
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private Transform[] playerPositions;
-    [Space(5)]
-    //[SerializeField] private GameObject bossPrefab;
 
     [Header("Party Manager")]
-    [SerializeField] private int maxPartySize;
     private List<Players> party;
 
     [Header("Boss Manager")]
-    [SerializeField] Bosses boss; 
+    [SerializeField] Monsters boss; 
 
-    // Turn Logic
+    // TURN LOGIC --------------------
     private List<GameObject> roundOrder;
     private int turn;
     [HideInInspector] public GenericEntity active;
 
-    // GAMBIARRA
-    [HideInInspector] public TurnAnim turnAnim;
-    [HideInInspector] public ActionsManager actionsManager;
+    // Action HUD Management
+    private ActionsManager actionsManager;
+    public ActionsManager GetActionsManager(){ return actionsManager; }
 
-    // EVENTOS ---------------------------------------------
+    // EVENTOS --------------------
     [HideInInspector] public UnityEvent onPassTurn;
     [HideInInspector] public UnityEvent onBossKill;
 
     public GenericEntity GetActiveTurn(){ return active; }
     public List<Players> GetParty() { return party; }
-    public Bosses GetBoss(){ return boss; }
+    public Monsters GetBoss(){ return boss; }
 
     public List<GameObject> GetTurnOrder() { return roundOrder; }
 
@@ -48,34 +46,33 @@ public class TurnManager : MonoBehaviour
         }
         else return;
 
-        turnAnim = GetComponentInChildren<TurnAnim>();
         actionsManager = GetComponentInChildren<ActionsManager>();
-        //onBossKill.AddListener(() => gm.onStartCombat?.Invoke());
     }
 
     public void SetupCombat(){
-        if(gm == null){
-            gm = GameManager.instance;
-        }
+        gm = GameManager.instance;
 
+        // DEFINE CHARACTERS INFO --------------------
         party = new List<Players>();
         for(int i = 0; i < gm.party.Count; i++){
             GameObject go = Instantiate(playerPrefab, playerPositions[i].position, playerPositions[i].rotation, this.transform);
+            go.transform.SetAsFirstSibling();
+
             Players player = go.GetComponent<Players>();
             player.SetPlayerInfo(gm.party[i]);
-
             party.Add(player);
         }
 
-        boss.SetBossInfo(gm.currentBoss);
+        boss.SetMonsterInfo(gm.currentBoss);
 
+
+        // DEFINE TURN ORDER --------------------
         List<GameObject> auxList = new List<GameObject>();
         foreach(Players player in party){
             auxList.Add(player.gameObject);
         }
         auxList.Add(boss.gameObject);
 
-        // Define turn order
         roundOrder = new List<GameObject>();
         int size = auxList.Count;
         for(int i = 0; i < size; i++){
@@ -83,12 +80,15 @@ public class TurnManager : MonoBehaviour
         }
     }
 
+    private void OnDisable() {
+        actionsManager.enabled = false;
+    }
+
     private void OnEnable() {
-        if(gm == null){
+        // Quando a cena carrega...
+        if(gm == null)
             return;
-        }
-            
-        turnAnim.enabled = true;
+
         actionsManager.enabled = true;
 
         turn = -1;
@@ -96,10 +96,11 @@ public class TurnManager : MonoBehaviour
     }
 
     public void Next(){
-        if(roundOrder.Count == 0){
+        // Empty
+        if(roundOrder.Count == 0)
             return;
-        }
 
+        // Updates order index
         turn++;
         if(turn >= roundOrder.Count)
             turn = 0; 
@@ -107,23 +108,27 @@ public class TurnManager : MonoBehaviour
         active = roundOrder[turn].GetComponent<GenericEntity>();
 
         if(active.isStuned){
+            // TODO onEndStun Event here
             active.isStuned = false;
             Next();
         }
 
         if(active.isPlayer()){
-            active.GetComponent<Players>().ManageCooldown();
+            Players activePlayer = active.GetComponent<Players>();
+            actionsManager.SetActivePlayer(activePlayer);
+            actionsManager.UpdatePlayerActionHUD();
+
+            activePlayer.ManageCooldown();
         }
         else{
-            active.GetComponent<Bosses>().Invoke("TakeAction", 2f);
+            Monsters activeMonster = active.GetComponent<Monsters>();
+            actionsManager.SetActivePlayer(null);
+            actionsManager.UpdateMonsterActionHUD();
+
+            activeMonster.Invoke("TakeAction", 2f);
         }
 
         onPassTurn?.Invoke();
-    }
-
-    private void OnDisable() {
-        turnAnim.enabled = false;
-        actionsManager.enabled = false;
     }
 
     [ContextMenu("NextTurn")] public void DoNext(){

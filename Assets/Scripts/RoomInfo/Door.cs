@@ -16,6 +16,7 @@ public class Door : MonoBehaviour
     private Canvas doorTip;
 
     [SerializeField] private int nEasy, nMedium, nHard;
+    private Sequence seq;
 
     [HideInInspector] public UnityEvent onSelectDoor;
 
@@ -84,7 +85,7 @@ public class Door : MonoBehaviour
         Image tooltipImage = doorTip.GetComponentInChildren<Image>(true);
         TextMeshProUGUI[] tooltipText = doorTip.GetComponentsInChildren<TextMeshProUGUI>(true);
 
-        Sequence seq = DOTween.Sequence();
+        seq = DOTween.Sequence();
         tooltipImage.transform.localScale = Vector3.zero;
         seq.AppendCallback(() => tooltipImage.gameObject.SetActive(true));
         seq.Append(tooltipImage.transform.DOScale(1f, 0.5f)
@@ -96,12 +97,17 @@ public class Door : MonoBehaviour
         Image tooltipImage = doorTip.GetComponentInChildren<Image>(true);
         TextMeshProUGUI[] tooltipText = doorTip.GetComponentsInChildren<TextMeshProUGUI>(true);
 
-        Sequence seq = DOTween.Sequence();
+        if(tooltipImage.transform.localScale != Vector3.one){
+            seq.Kill();
+        }
+
+        seq = DOTween.Sequence();
         tooltipImage.transform.localScale = Vector3.one;
         seq.AppendCallback(() => ActivateText(tooltipText, false));
         seq.Append(tooltipImage.transform.DOScale(0f, 0.5f)
         .SetEase(Ease.OutSine)
         .OnComplete(() => tooltipImage.gameObject.SetActive(false)));
+        seq.AppendCallback(() => ActivateText(tooltipText, false));
     }
 
     private void ActivateText(TextMeshProUGUI[] text, bool mode){

@@ -1,88 +1,125 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ActionsManager : MonoBehaviour
 {
-    TurnManager tm;
+    private TurnManager tm;
 
-    [SerializeField] private Transform actionsTransform;
-    [SerializeField] private Button basicAttackButton, specialAttackButton;
+    [Header("Action Buttons References")]
+    [SerializeField] private Button basicAttackButton;
+    [SerializeField] private Button specialAttackButton;
     private Image basicAttackButtonArt, specialAttackButtonArt;
+    private Players activePlayer;
 
-    Sequence seqAction;
-    public float offset;
-    public float animationDuration = 1f;
-    public float idleDuration = 0.5f;
+    [Header("Turn Indicator References")]
+    [SerializeField] private TextMeshProUGUI turnText;
+
+    [Header("HUD Animation")]
+    [SerializeField] private Transform actionAnchor;
+    [SerializeField] private float actionOffset;
+    [SerializeField] private Transform turnAnchor;
+    [SerializeField] private float turnOffset;
+    [Space(5)]
+    [SerializeField] private float animationDuration = 1f;
+    [SerializeField] private float idleDuration = 0.5f;
+    private Sequence seqAction;
 
     private void Start() {
         tm = TurnManager.instance;
-        tm.onPassTurn.AddListener(ActionAnim);
 
         basicAttackButtonArt = basicAttackButton.GetComponent<Image>();
         specialAttackButtonArt = specialAttackButton.GetComponent<Image>();
     }
 
-    private void OnEnable() {
-        if(tm == null){
-            tm = TurnManager.instance;
-        }
-        tm.onPassTurn.AddListener(ActionAnim);
-        //ActionAnim();
+    public void SetActivePlayer(Players player){ activePlayer = player; }
+
+    public void UpdatePlayerActionHUD(){
+        if(activePlayer == null)
+            return;
+
+        seqAction = DOTween.Sequence();
+        seqAction.AppendCallback(() => SetActiveName());
+        seqAction.JoinCallback(() => SetButtonImage());
+        seqAction.AppendInterval(idleDuration);
+        seqAction.Append(turnAnchor.DOMoveY(turnAnchor.position.y + turnOffset, animationDuration)
+            .SetEase(Ease.InQuad));
+        seqAction.Join(actionAnchor.DOMoveY(actionAnchor.position.y + actionOffset, animationDuration)
+            .SetEase(Ease.InQuad)
+            .OnComplete(() => ActivateButtons(true)));
+    }
+
+    public void UpdateMonsterActionHUD(){
+        if(activePlayer != null)
+            return;
+
+        seqAction = DOTween.Sequence();
+        seqAction.AppendCallback(() => SetActiveName());
+        seqAction.AppendInterval(idleDuration);
+        seqAction.Append(turnAnchor.DOMoveY(turnAnchor.position.y + turnOffset, animationDuration)
+            .SetEase(Ease.InQuad));
     }
 
     public void BasicAttackButton(){
-        tm.active.BasicAttack();
+        if(activePlayer == null)
+            return;
+
+        activePlayer.BasicAttack();
+        NextTurnPlayerUpdate();
     }
 
     public void SpecialAttackButton(){
-        Players active = (Players) tm.active;
-        active.SpecialAttack();
+        if(activePlayer == null)
+            return;
+
+        activePlayer.SpecialAttack();
+        NextTurnPlayerUpdate();
     }
 
-    public void CallNextTurn(){
+    private void NextTurnPlayerUpdate(){
         seqAction = DOTween.Sequence();
-
-        seqAction.AppendCallback(() => SetButtons(false));
-        seqAction.AppendInterval(.2f);
-        
-        seqAction.Append(actionsTransform.DOMoveY(actionsTransform.position.y - offset, animationDuration)
-        .SetEase(Ease.OutQuad))
-        .OnComplete(() => tm.Next());
+        seqAction.AppendCallback(() => ActivateButtons(false));
+        seqAction.AppendInterval(idleDuration/2f);
+        seqAction.Append(turnAnchor.DOMoveY(turnAnchor.position.y - turnOffset, animationDuration)
+            .SetEase(Ease.OutQuad));
+        seqAction.Join(actionAnchor.DOMoveY(actionAnchor.position.y - actionOffset, animationDuration)
+            .SetEase(Ease.OutQuad))
+            .OnComplete(() => tm.Next());
     }
 
-    public void ActionAnim(){
+    public void NextTurnMonsterUpdate(){
         seqAction = DOTween.Sequence();
-
-        if(tm.active.isPlayer()){
-            seqAction.AppendCallback(() => SetButtonImage());
-            seqAction.AppendInterval(idleDuration);
-            seqAction.Append(actionsTransform.DOMoveY(actionsTransform.position.y + offset, animationDuration)
-            .SetEase(Ease.InQuad)
-            .OnComplete(() => SetButtons(true)));
-        }
+        seqAction.AppendInterval(idleDuration/2f);
+        seqAction.Append(turnAnchor.DOMoveY(turnAnchor.position.y - turnOffset, animationDuration)
+            .SetEase(Ease.OutQuad)
+            .OnComplete(() => tm.Next()));
     }
 
     private void SetButtonImage(){
-        if(!tm.active.isPlayer())
-            return;
-
-        basicAttackButtonArt.sprite = tm.active.GetPlayer().basicAttackButton;
-        specialAttackButtonArt.sprite = tm.active.GetPlayer().specialAttackButton;
+        basicAttackButtonArt.sprite   = activePlayer.GetPlayer().basicAttackButton;
+        specialAttackButtonArt.sprite = activePlayer.GetPlayer().specialAttackButton;
     }
 
-    private void SetButtons(bool mode){
-        if(!tm.active.isPlayer())
-            return;
-        
-        basicAttackButton.interactable = mode;
-        if(tm.active.GetComponent<Players>().specialCooldownCounter > 0){
+    private void SetActiveName(){
+        turnText.text = tm.active.GetEntityName();
+        turnText.text += "'s Turn";
+    }
+
+    private void ActivateButtons(bool mode){
+        if(activePlayer == null){
+            basicAttackButton.interactable = false;
             specialAttackButton.interactable = false;
+            return;
         }
-        else{
-            specialAttackButton.interactable = mode;
+
+        basicAttackButton.interactable = mode;
+        specialAttackButton.interactable = mode;
+
+        if(activePlayer.specialCooldownCounter > 0){
+            specialAttackButton.interactable = false;
         }
     }
 }

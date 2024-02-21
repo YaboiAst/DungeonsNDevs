@@ -62,7 +62,7 @@ public class TooltipHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         moveDescription;
     }
 
-    void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData){
+    public void OnPointerEnter(PointerEventData eventData){
         if(!thisButton.interactable)
             return;
 

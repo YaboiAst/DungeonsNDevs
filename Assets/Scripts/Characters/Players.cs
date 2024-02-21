@@ -9,22 +9,22 @@ using UnityEngine.UI;
 public class Players : GenericEntity
 {
     [SerializeField] private Player playerInfo;
-    private Bosses boss;
+    private Monsters boss;
 
     [HideInInspector] public int specialCooldownCounter;
 
     [HideInInspector] public UnityEvent onPlayerDeath;
 
-    internal override void SetupCharacter(){
-        base.SetupCharacter();
-        boss = tm.GetBoss();
-
-        onPlayerDeath.AddListener(Die);
-    }
-
     public void SetPlayerInfo(Player playerInfo){
         this.playerInfo = playerInfo;
         characterSet?.Invoke();
+    }
+
+    internal override void SetupCharacter(){
+        base.SetupCharacter();
+        boss = tm.GetBoss();
+        
+        onPlayerDeath.AddListener(Die);
     }
 
     public override bool isPlayer(){ return true; }
