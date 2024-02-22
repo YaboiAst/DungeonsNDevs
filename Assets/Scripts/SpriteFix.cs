@@ -5,7 +5,8 @@ using UnityEngine;
 public class SpriteFix : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
-    [SerializeField] Transform player;
+    [SerializeField] private Transform player;
+    [SerializeField] private int lowLayer = 5, highLayer = 10; 
 
     private void Start() {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -13,10 +14,10 @@ public class SpriteFix : MonoBehaviour
 
     private void Update() {
         if(player.transform.position.y > transform.position.y){
-            spriteRenderer.sortingOrder = 10;
+            spriteRenderer.sortingOrder = highLayer;
         }
         else
-            spriteRenderer.sortingOrder = 0;
+            spriteRenderer.sortingOrder = lowLayer;
 
     }
 }

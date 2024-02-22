@@ -57,6 +57,7 @@ public class TurnManager : MonoBehaviour
         for(int i = 0; i < gm.party.Count; i++){
             GameObject go = Instantiate(playerPrefab, playerPositions[i].position, playerPositions[i].rotation, this.transform);
             go.transform.SetAsFirstSibling();
+            go.GetComponent<SpriteRenderer>().sortingOrder = 6 + i;
 
             Players player = go.GetComponent<Players>();
             player.SetPlayerInfo(gm.party[i]);
@@ -129,6 +130,10 @@ public class TurnManager : MonoBehaviour
         }
 
         onPassTurn?.Invoke();
+    }
+
+    public void ClearTurnOrder(){
+        roundOrder.RemoveRange(0, roundOrder.Count);
     }
 
     [ContextMenu("NextTurn")] public void DoNext(){

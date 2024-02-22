@@ -44,10 +44,8 @@ public class Monsters : GenericEntity
     }
 
     private void DefeatBoss(){
-        tm.GetTurnOrder().RemoveRange(0, tm.GetTurnOrder().Count);
-        gm.isBossDefeated = true;
+        tm.ClearTurnOrder();
         gm.onReturnDungeon?.Invoke();
-        tm.onBossKill?.Invoke();
     }
 
     public void TakeAction(){
